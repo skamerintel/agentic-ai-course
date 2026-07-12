@@ -1,0 +1,10 @@
+[course]
+# Allowed values: "gated" or "reference".
+solution_access = "gated"
+primary_model_provider = "openai"
+orchestration_framework = "langgraph"
+coding_agent = "learner-choice"
+review_mode = "ai-and-mentor"
+
+[references]
+last_checked = "2026-07-12"
