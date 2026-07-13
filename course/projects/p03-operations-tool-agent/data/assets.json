@@ -1,0 +1,5 @@
+[
+  {"asset_id":"LAP-204","kind":"laptop","owner":"Maya Chen","location":"Chicago","status":"assigned","updated_at":"2026-07-11T18:20:00Z"},
+  {"asset_id":"SCN-B14","kind":"warehouse_scanner","owner":"Warehouse 2 Operations","location":"Building B","status":"maintenance_required","updated_at":"2026-07-12T08:45:00Z"},
+  {"asset_id":"LAP-500","kind":"laptop","owner":"Finance Pool","location":"Austin","status":"available","updated_at":"2026-07-10T16:00:00Z"}
+]

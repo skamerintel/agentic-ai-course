@@ -98,6 +98,11 @@ model selection. Prefer capability checks and documented API behavior.
 - [Structured model outputs](https://developers.openai.com/api/docs/guides/structured-outputs)
 - [Function calling](https://developers.openai.com/api/docs/guides/function-calling)
 
+### REF-OPENAI-AGENTS
+
+- [Agents guide](https://developers.openai.com/api/docs/guides/agents)
+- [Tools guide](https://developers.openai.com/api/docs/guides/tools)
+
 ### REF-OPENAI-STREAMING
 
 - [Streaming API responses](https://developers.openai.com/api/docs/guides/streaming-responses)
