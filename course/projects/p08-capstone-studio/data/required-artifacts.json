@@ -1,0 +1,18 @@
+[
+  {"id":"project-brief","phase":"proposal","description":"Business user, current workflow, measurable outcome, scope, and non-goals"},
+  {"id":"architecture","phase":"proposal","description":"System, workflow, state, trust-boundary, and deployment diagrams with decisions"},
+  {"id":"evaluation-plan","phase":"proposal","description":"Ground truth, policy, splits, metrics, slices, baseline, and leakage controls"},
+  {"id":"risk-register","phase":"proposal","description":"Owned technical, safety, delivery, data, and operating risks"},
+  {"id":"milestone-plan","phase":"proposal","description":"Five vertical milestones with demos and acceptance evidence"},
+  {"id":"test-matrix","phase":"implementation","description":"Unit, integration, contract, recovery, and adversarial coverage"},
+  {"id":"failure-ledger","phase":"implementation","description":"Observed failures, slices, diagnoses, interventions, and regressions"},
+  {"id":"evaluation-report","phase":"implementation","description":"Baseline, two iterations, holdout, denominators, and limitations"},
+  {"id":"ai-work-log","phase":"implementation","description":"Material coding-agent contributions and human verification"},
+  {"id":"delivery-evidence","phase":"implementation","description":"Package inventory, clean install, Docker smoke, and configuration path"},
+  {"id":"production-readiness","phase":"implementation","description":"Threats, blockers, hardening, accepted risks, and production gaps"},
+  {"id":"portfolio-readme","phase":"portfolio","description":"Problem, architecture, quick start, evidence, demos, and limitations"},
+  {"id":"demo-script","phase":"portfolio","description":"Five-minute fixture-backed success and failure walkthrough"},
+  {"id":"resume-bullets","phase":"portfolio","description":"Two evidence-backed project bullets without inflated claims"},
+  {"id":"interview-stories","phase":"portfolio","description":"Design, failure, AI-correction, reliability, and tradeoff stories"},
+  {"id":"review-resolution","phase":"portfolio","description":"AI and mentor findings resolved or rejected with evidence"}
+]

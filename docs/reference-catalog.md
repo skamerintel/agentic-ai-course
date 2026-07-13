@@ -2,6 +2,9 @@
 
 Checked on: **2026-07-12**
 
+OpenAI Responses, structured-output, and evaluation references used by the
+capstone slice were rechecked on **2026-07-13**.
+
 This catalog contains the primary references used by the curriculum roadmap.
 Modules cite reference IDs from this page. Before writing or teaching a module,
 verify its references again and record the new check date in the completed

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "support-escalation-investigator",
+    "recommended": true,
+    "business_user": "platform support lead",
+    "outcome": "reduce investigation time and missing-evidence handoffs",
+    "apis": ["GitHub REST", "synthetic support ticket", "synthetic service status"],
+    "consequential_actions": ["post ticket note", "change escalation status", "open GitHub issue"],
+    "critical_slices": ["conflicting status evidence", "duplicate symptoms", "missing repository link", "prompt injection in ticket text"]
+  },
+  {
+    "id": "incident-follow-up-coordinator",
+    "recommended": false,
+    "business_user": "engineering manager",
+    "outcome": "increase evidence coverage and ownership quality of incident follow-up",
+    "apis": ["GitHub REST", "synthetic incident management", "synthetic monitoring events"],
+    "consequential_actions": ["create GitHub issue", "assign owner", "close follow-up"],
+    "critical_slices": ["incomplete timeline", "duplicate action", "uncertain root cause", "replayed incident event"]
+  },
+  {
+    "id": "dependency-upgrade-investigator",
+    "recommended": false,
+    "business_user": "platform engineer",
+    "outcome": "improve evidence-backed upgrade decisions and rollout planning",
+    "apis": ["GitHub REST", "synthetic package registry", "synthetic advisory service"],
+    "consequential_actions": ["open upgrade pull request", "approve policy exception", "schedule rollout"],
+    "critical_slices": ["breaking release", "transitive dependency", "stale advisory", "missing test evidence"]
+  },
+  {
+    "id": "compliance-evidence-coordinator",
+    "recommended": false,
+    "business_user": "internal assurance analyst",
+    "outcome": "reduce stale or unsupported control evidence",
+    "apis": ["GitHub REST", "synthetic control catalog", "synthetic evidence request"],
+    "consequential_actions": ["submit assessment", "request evidence", "mark control satisfied"],
+    "critical_slices": ["stale evidence", "sensitive content", "conflicting review record", "missing control owner"]
+  }
+]

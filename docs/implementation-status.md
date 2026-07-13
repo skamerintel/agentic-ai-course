@@ -1,6 +1,6 @@
 # Implementation Status
 
-Updated: **2026-07-12**
+Updated: **2026-07-13**
 
 ## Complete
 
@@ -8,6 +8,12 @@ Updated: **2026-07-12**
 - Curriculum roadmap and seven-project sequence.
 - Official reference catalog.
 - M00-M24 lesson materials.
+- M25 capstone discovery, workflow scoping, architecture, evaluation planning,
+  and proposal defense.
+- M26 risk-driven vertical delivery, failure review, measured iterations,
+  packaging, containerization, and implementation defense.
+- M27 portfolio, résumé, demonstration, interview, and changed-constraint
+  defense.
 - M01 generated Git conflict lab.
 - M02 flawed-test exercise, mentor acceptance tests, and reference repair.
 - M03 local HTTP failure simulator and tested reference async client.
@@ -60,7 +66,16 @@ Updated: **2026-07-12**
 - Project 7 multi-stage installed-wheel Dockerfile, Compose fixture evaluation,
   administrative approval CLI, and private trust-boundary holdout.
 - `coursectl.py` project materialization and configurable honor-system solution
-  access for Projects 1 through 7.
+  access for Projects 1 through 8.
+- Project 8 Capstone Studio with four candidate domains, a recommended support
+  escalation default, nine synthetic scenario seeds, five milestone gates,
+  sixteen required portfolio artifacts, and proposal/portfolio validators.
+- Project 8 strict Pydantic proposal contract, weak proposal exercise, thirteen
+  artifact templates, AI/mentor/technical-defense rubrics, gated exemplar, and
+  private changed-constraint and portfolio-defense challenge sets.
+- Project 8 reference cross-field validator and support-escalation exemplar that
+  preserve independent capstone implementation rather than supplying a solved
+  product.
 
 ## Verification completed
 
@@ -117,6 +132,16 @@ Updated: **2026-07-12**
   successfully.
 - Project 7 learner starter passes seven model, fixture, and architecture tests
   and fails only at 13 intended HTTP gateway, state, MCP, and webhook TODO gates.
+- Project 8 reference passes Ruff, formatting, Pyright, 10 project tests, and all
+  six private holdout checks covering authority, state, API depth, optional MCP,
+  and final evidence completeness.
+- Project 8 builds a clean wheel and source distribution with uv and Hatchling;
+  the CLI accepts the exemplar and reports all blocking findings for the weak
+  proposal in one run.
+- The Project 8 wheel installs into a clean environment outside the source
+  checkout, and its console entry point validates the exemplar successfully.
+- Project 8 learner starter passes three strict model/fixture tests and fails
+  only at seven intended proposal and artifact validator TODO gates.
 
 ## Deliberately not verified
 
@@ -130,10 +155,12 @@ Updated: **2026-07-12**
 - Project 7's Docker image build and external container smoke test require an
   explicit learner or mentor Docker run; repository verification validates its
   Compose configuration and clean installed-wheel runtime separately.
+- The learner-selected capstone product, live APIs, PostgreSQL/Redis stack,
+  Docker smoke test, evaluation iterations, portfolio, and human defense cannot
+  be completed by the course-authoring repository.
 
-## Next vertical slice
+## Course-authoring status
 
-- M25: Capstone discovery and architecture.
-- M26: Capstone implementation and evaluation.
-- M27: Portfolio, résumé, and interview defense.
-- Capstone selection and implementation.
+- All planned course modules and project scaffolds are implemented.
+- The next work is learner execution of Project 8, mentor gate reviews, and
+  maintenance as upstream APIs and frameworks evolve.

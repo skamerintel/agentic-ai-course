@@ -403,9 +403,11 @@ professional delivery in one bounded service.
 
 ### Domain-selection rule
 
-The exact business domain is intentionally deferred until the learner has
-completed enough of the course to make an informed choice. The selected project
-must solve a workflow problem and cannot be primarily a chatbot.
+The learner selects the business domain during M25, after completing enough of
+the course to make an informed choice. Project 8 supplies four candidate briefs,
+a selection matrix, scenario seeds, and a custom-domain path. Support escalation
+investigation is the recommended default. The selected project must solve a
+workflow problem and cannot be primarily a chatbot.
 
 ### Required shape
 
@@ -427,9 +429,9 @@ The capstone must:
   proportion to the risks.
 - Produce the portfolio artifacts defined in the course specification.
 
-### Candidate domains for later selection
+### Candidate domains
 
-These are prompts for discovery, not preselected answers:
+These remain prompts for learner discovery, not pre-solved applications:
 
 - Repository maintenance and issue-to-implementation planning.
 - Pull-request risk assessment and release coordination.
@@ -438,6 +440,10 @@ These are prompts for discovery, not preselected answers:
   APIs.
 - Engineering incident evidence collection and follow-up tracking.
 - Compliance evidence gathering from repositories and approved business APIs.
+
+Project 8 implements proposal and portfolio evidence validators, milestone
+contracts, review rubrics, a gated exemplar, and private mentor challenges. It
+does not provide a finished capstone product implementation.
 
 ### Proposal gate
 

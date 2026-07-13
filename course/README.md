@@ -29,6 +29,9 @@ The implemented course is organized into modules and cumulative projects.
 - [M22: Customer-facing packages with uv and Hatchling](modules/m22/README.md)
 - [M23: Docker and local multi-service delivery](modules/m23/README.md)
 - [M24: Prototype-to-production review](modules/m24/README.md)
+- [M25: Capstone discovery and architecture](modules/m25/README.md)
+- [M26: Capstone implementation and evaluation](modules/m26/README.md)
+- [M27: Portfolio, résumé, and interview defense](modules/m27/README.md)
 - [Project 1: Model API Behavior Lab](projects/p01-model-api-behavior-lab/README.md)
 - [Project 2: Typed Intake Normalizer](projects/p02-typed-intake-normalizer/README.md)
 - [Project 3: Operations Tool Agent](projects/p03-operations-tool-agent/README.md)
@@ -36,6 +39,7 @@ The implemented course is organized into modules and cumulative projects.
 - [Project 5: Asynchronous Agent Job Service](projects/p05-asynchronous-agent-job-service/README.md)
 - [Project 6: Durable Release Readiness Workflow](projects/p06-durable-release-readiness-workflow/README.md)
 - [Project 7: GitHub Workflow MCP Service](projects/p07-github-workflow-mcp-service/README.md)
+- [Project 8: Capstone Studio](projects/p08-capstone-studio/README.md)
 
 Start at M00 and do not advance past a comprehension gate until its required
 artifacts have been reviewed.

@@ -106,6 +106,32 @@ class CourseControlTests(unittest.TestCase):
             self.assertTrue((destination / "broken-tool-catalog-review.md").is_file())
             self.assertFalse((destination / "data/holdout-scenarios.jsonl").exists())
 
+    def test_start_project_eight_copies_studio_but_not_mentor_challenges(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            destination = Path(temporary) / "p08"
+
+            coursectl.start_project("p08", destination)
+
+            self.assertTrue((destination / "data/capstone-options.json").is_file())
+            self.assertTrue((destination / "fixtures/weak-proposal.json").is_file())
+            self.assertTrue((destination / "reports/project-brief.md").is_file())
+            self.assertTrue((destination / "candidate-briefs.md").is_file())
+            self.assertFalse((destination / "mentor-challenges.jsonl").exists())
+
+    def test_project_eight_reference_adds_exemplar_not_product_solution(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            destination = Path(temporary) / "p08-reference"
+
+            coursectl.materialize_solution("p08", destination)
+
+            self.assertTrue(
+                (destination / "examples/support-escalation-proposal.json").is_file()
+            )
+            self.assertTrue(
+                (destination / "src/capstone_studio/validator.py").is_file()
+            )
+            self.assertFalse((destination / "src/capstone_product").exists())
+
 
 if __name__ == "__main__":
     unittest.main()

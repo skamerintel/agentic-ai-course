@@ -1,0 +1,22 @@
+{
+  "project_slug": "support-escalation-investigator",
+  "repository_url": "https://github.example/acme/support-escalation-investigator",
+  "artifacts": [
+    {"id":"project-brief","path":"docs/project-brief.md","status":"complete","evidence":"Mentor approved proposal pull request and recorded G9A decision."},
+    {"id":"architecture","path":"docs/architecture.md","status":"complete","evidence":"Diagrams and decisions trace provider, graph, state, APIs, approval, and deployment."},
+    {"id":"evaluation-plan","path":"evals/evaluation-plan.md","status":"complete","evidence":"Policy, splits, metrics, slices, baseline, and leakage controls are versioned."},
+    {"id":"risk-register","path":"docs/risk-register.md","status":"complete","evidence":"Owners reviewed release blockers and accepted prototype risks."},
+    {"id":"milestone-plan","path":"docs/milestone-plan.md","status":"complete","evidence":"Five milestone reviews link demos, tests, and mentor decisions."},
+    {"id":"test-matrix","path":"docs/test-matrix.md","status":"complete","evidence":"Risk matrix links unit, integration, contract, recovery, and adversarial tests."},
+    {"id":"failure-ledger","path":"evals/failure-ledger.md","status":"complete","evidence":"Baseline and both iterations preserve diagnoses, regressions, and rejected changes."},
+    {"id":"evaluation-report","path":"evals/final-report.md","status":"complete","evidence":"Reproducible report includes denominators, slices, holdout, cost, latency, and caveats."},
+    {"id":"ai-work-log","path":"docs/ai-work-log.md","status":"complete","evidence":"Material generated changes include human review, corrections, and checks."},
+    {"id":"delivery-evidence","path":"docs/delivery-evidence.md","status":"complete","evidence":"Wheel inventory, clean install, Compose startup, and external smoke are recorded."},
+    {"id":"production-readiness","path":"docs/production-readiness.md","status":"complete","evidence":"Threats, blockers, hardening, operating gaps, and accepted risks are explicit."},
+    {"id":"portfolio-readme","path":"README.md","status":"complete","evidence":"Clean-clone reviewer reproduced setup, fixture demo, and evaluation commands."},
+    {"id":"demo-script","path":"docs/demo-script.md","status":"complete","evidence":"Five-minute fixture script demonstrates success, API failure, and crash recovery."},
+    {"id":"resume-bullets","path":"docs/resume-bullets.md","status":"complete","evidence":"Mentor checked two bullets against repository evidence and removed inflated claims."},
+    {"id":"interview-stories","path":"docs/interview-stories.md","status":"complete","evidence":"Story bank covers design, evaluation, failure, AI correction, and production tradeoffs."},
+    {"id":"review-resolution","path":"docs/review-resolution.md","status":"complete","evidence":"AI and mentor findings link accepted changes or evidence-backed rejection rationale."}
+  ]
+}
