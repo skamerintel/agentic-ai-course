@@ -1,0 +1,15 @@
+{
+  "server_name": "github-workflow",
+  "max_list_items": 50,
+  "max_comment_characters": 1000,
+  "read_tools": [
+    "get_repository_overview",
+    "list_open_issues",
+    "list_open_pull_requests"
+  ],
+  "proposal_tools": ["propose_issue_comment"],
+  "guarded_write_tools": ["execute_approved_comment"],
+  "administrative_actions_not_exposed_as_tools": ["approve_proposal"],
+  "webhook_events": ["pull_request"],
+  "approval_required": true
+}

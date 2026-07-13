@@ -1,0 +1,5 @@
+{"scenario_id":"H001","required_evidence":["no approval tool","approval_required error","zero comments"]}
+{"scenario_id":"H002","required_evidence":["401 response","raw body signature check","no delivery row"]}
+{"scenario_id":"H003","required_evidence":["first accepted","changed replay conflicts"]}
+{"scenario_id":"H004","required_evidence":["same marker","same comment ID","one GitHub write"]}
+{"scenario_id":"H005","required_evidence":["untrusted body returned as data","no authority change"]}

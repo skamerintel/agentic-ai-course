@@ -1,0 +1,20 @@
+{
+  "fixture_mode": {"network": false, "durable_state": "local SQLite"},
+  "github_read_token": {
+    "repository_metadata": "read",
+    "issues": "read",
+    "pull_requests": "read",
+    "contents": "none"
+  },
+  "github_write_token": {
+    "repository_metadata": "read",
+    "issues": "write",
+    "pull_requests": "read",
+    "administration": "none",
+    "contents": "none"
+  },
+  "webhook": {
+    "secret_required": true,
+    "subscribed_events": ["pull_request"]
+  }
+}
