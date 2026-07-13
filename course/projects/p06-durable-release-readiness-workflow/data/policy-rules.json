@@ -1,0 +1,9 @@
+{
+  "block_on_issue_labels": ["release-blocker"],
+  "block_on_issue_severities": ["critical"],
+  "allowed_open_pr_labels": ["docs-only"],
+  "required_check_status": "passed",
+  "notes_minimum_score": 0.7,
+  "ready_decision": "ready",
+  "blocked_decision": "hold"
+}

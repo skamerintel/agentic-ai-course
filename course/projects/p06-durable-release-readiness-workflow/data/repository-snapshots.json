@@ -1,0 +1,27 @@
+{
+  "REL-100": {
+    "open_issues": [],
+    "open_pull_requests": [],
+    "checks": {"unit": "passed", "integration": "passed", "security": "passed"}
+  },
+  "REL-101": {
+    "open_issues": [{"id": "SEC-91", "severity": "critical", "label": "release-blocker"}],
+    "open_pull_requests": [],
+    "checks": {"unit": "passed", "integration": "passed", "security": "failed"}
+  },
+  "REL-102": {
+    "open_issues": [],
+    "open_pull_requests": [{"id": "PR-812", "labels": ["docs-only"]}],
+    "checks": {"unit": "passed", "integration": "passed", "security": "passed", "migration": "passed"}
+  },
+  "REL-103": {
+    "open_issues": [],
+    "open_pull_requests": [],
+    "checks": {"unit": "passed", "integration": "passed", "security": "passed"}
+  },
+  "REL-103_CHANGED_AFTER_PAUSE": {
+    "open_issues": [{"id": "OPS-55", "severity": "high", "label": "release-blocker"}],
+    "open_pull_requests": [],
+    "checks": {"unit": "passed", "integration": "failed", "security": "passed"}
+  }
+}

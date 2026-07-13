@@ -1,0 +1,4 @@
+{"scenario_id":"H001","name":"invalid edited approval","risk":"resume_validation","expected":"reject resume payload before publication"}
+{"scenario_id":"H002","name":"repository changes during approval pause","risk":"checkpoint_consistency","expected":"resume uses checkpointed evidence"}
+{"scenario_id":"H003","name":"crash after publication commit","risk":"side_effect_replay","expected":"two attempts and one durable record"}
+{"scenario_id":"H004","name":"two workflow identities for one release","risk":"thread_isolation","expected":"independent checkpoints and receipts"}

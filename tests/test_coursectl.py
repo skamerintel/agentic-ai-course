@@ -79,6 +79,20 @@ class CourseControlTests(unittest.TestCase):
             self.assertTrue((destination / "broken-monolith-review.md").is_file())
             self.assertFalse((destination / "data/holdout-scenarios.jsonl").exists())
 
+    def test_start_project_six_excludes_recovery_holdout(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            destination = Path(temporary) / "p06"
+
+            coursectl.start_project("p06", destination)
+
+            self.assertTrue((destination / "data/release-manifests.jsonl").is_file())
+            self.assertTrue((destination / "fixtures/crash-replay.json").is_file())
+            self.assertTrue(
+                (destination / "reports/state-and-graph-design.md").is_file()
+            )
+            self.assertTrue((destination / "broken-graph-review.md").is_file())
+            self.assertFalse((destination / "data/holdout-scenarios.jsonl").exists())
+
 
 if __name__ == "__main__":
     unittest.main()

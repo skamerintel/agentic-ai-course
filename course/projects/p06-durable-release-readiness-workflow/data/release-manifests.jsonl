@@ -1,0 +1,4 @@
+{"release_id":"REL-100","version":"2.4.0","commit_sha":"a100000","release_notes":"Adds idempotent payment retries and documents migration steps.","required_checks":["unit","integration","security"],"slices":["ready_candidate"]}
+{"release_id":"REL-101","version":"2.4.1","commit_sha":"b101000","release_notes":"Security maintenance release. Details will be added later.","required_checks":["unit","integration","security"],"slices":["security_blocker","incomplete_notes"]}
+{"release_id":"REL-102","version":"3.0.0","commit_sha":"c102000","release_notes":"Major API update with breaking changes and a migration guide.","required_checks":["unit","integration","security","migration"],"slices":["human_edit","major_release"]}
+{"release_id":"REL-103","version":"2.5.0","commit_sha":"d103000","release_notes":"Improves worker recovery and release diagnostics.","required_checks":["unit","integration","security"],"slices":["mutable_tool","restart"]}

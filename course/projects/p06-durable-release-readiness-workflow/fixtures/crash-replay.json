@@ -1,0 +1,23 @@
+{
+  "scenarios": [
+    {
+      "name": "crash_after_publish_before_checkpoint",
+      "release_id": "REL-100",
+      "failure_point": "after_sink_commit",
+      "expected_publish_attempts": 2,
+      "expected_durable_records": 1
+    },
+    {
+      "name": "repository_changes_while_paused",
+      "release_id": "REL-103",
+      "changed_snapshot_key": "REL-103_CHANGED_AFTER_PAUSE",
+      "expected_resume_behavior": "use checkpointed repository evidence"
+    },
+    {
+      "name": "new_thread_after_change",
+      "release_id": "REL-103",
+      "changed_snapshot_key": "REL-103_CHANGED_AFTER_PAUSE",
+      "expected_new_run_behavior": "use changed repository evidence"
+    }
+  ]
+}

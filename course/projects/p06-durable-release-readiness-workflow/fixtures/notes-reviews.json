@@ -1,0 +1,6 @@
+{
+  "REL-100": {"score": 0.95, "summary": "Clear behavior and migration notes.", "missing_sections": []},
+  "REL-101": {"score": 0.35, "summary": "Security details and operator guidance are missing.", "missing_sections": ["security impact", "operator actions"]},
+  "REL-102": {"score": 0.82, "summary": "Breaking changes and migration path are documented.", "missing_sections": []},
+  "REL-103": {"score": 0.9, "summary": "Recovery behavior and diagnostics are documented.", "missing_sections": []}
+}

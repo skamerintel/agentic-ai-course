@@ -186,12 +186,14 @@ model selection. Prefer capability checks and documented API behavior.
 ### REF-LANGGRAPH-OVERVIEW
 
 - [LangGraph overview](https://docs.langchain.com/oss/python/langgraph/overview)
+- [Graph API](https://docs.langchain.com/oss/python/langgraph/graph-api)
 
 ### REF-LANGGRAPH-STATE
 
 - [LangGraph persistence](https://docs.langchain.com/oss/python/langgraph/persistence)
 - [LangGraph interrupts](https://docs.langchain.com/oss/python/langgraph/interrupts)
 - [LangGraph streaming](https://docs.langchain.com/oss/python/langgraph/streaming)
+- [Durable execution](https://docs.langchain.com/oss/python/langgraph/durable-execution)
 
 ### REF-FASTMCP
 

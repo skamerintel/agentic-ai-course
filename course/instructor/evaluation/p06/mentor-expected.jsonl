@@ -1,0 +1,4 @@
+{"scenario_id":"H001","required_evidence":["Pydantic validation error","zero publications"]}
+{"scenario_id":"H002","required_evidence":["ready proposal preserved","new thread sees changed blocker"]}
+{"scenario_id":"H003","required_evidence":["publish node replayed","receipt reused","one row"]}
+{"scenario_id":"H004","required_evidence":["distinct thread IDs","distinct workflow receipts"]}

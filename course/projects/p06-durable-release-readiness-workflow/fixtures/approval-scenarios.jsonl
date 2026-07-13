@@ -1,0 +1,4 @@
+{"scenario_id":"A001","release_id":"REL-100","action":"approve","expected_final_decision":"ready","expected_published":true}
+{"scenario_id":"A002","release_id":"REL-101","action":"reject","expected_final_decision":"rejected","expected_published":true}
+{"scenario_id":"A003","release_id":"REL-102","action":"edit","edited_decision":"ready_with_conditions","conditions":["Confirm documentation PR-812 merges before tagging"],"expected_final_decision":"ready_with_conditions","expected_published":true}
+{"scenario_id":"A004","release_id":"REL-103","action":"approve","expected_final_decision":"ready","expected_published":true}

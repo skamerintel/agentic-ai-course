@@ -7,7 +7,7 @@ Updated: **2026-07-12**
 - Formal course specification.
 - Curriculum roadmap and seven-project sequence.
 - Official reference catalog.
-- M00-M17 lesson materials.
+- M00-M19 lesson materials.
 - M01 generated Git conflict lab.
 - M02 flawed-test exercise, mentor acceptance tests, and reference repair.
 - M03 local HTTP failure simulator and tested reference async client.
@@ -41,8 +41,16 @@ Updated: **2026-07-12**
   provider, and optional OpenAI Responses provider.
 - Project 5 private mentor holdout covering conflicting retries, cancellation
   races, transient-progress loss, and secret-bearing provider exceptions.
+- Project 6 release manifests, repository snapshots, deterministic policy,
+  scripted notes reviews, approval and crash fixtures, starter workspace,
+  rubrics, and state, approval, recovery, replay, and portfolio templates.
+- Project 6 reference typed LangGraph state, deterministic blocker routing,
+  streamed updates, human approval interrupt, SQLite checkpoint reconstruction,
+  approve/edit/reject paths, and idempotent SQLite publication sink.
+- Project 6 private mentor holdout covering invalid resume data, checkpointed
+  evidence versus changed source data, crash replay, and thread isolation.
 - `coursectl.py` project materialization and configurable honor-system solution
-  access for Projects 1 through 5.
+  access for Projects 1 through 6.
 
 ## Verification completed
 
@@ -80,6 +88,14 @@ Updated: **2026-07-12**
 - Project 5 builds both a wheel and source distribution with uv and Hatchling.
 - Project 5 learner starter passes six foundational tests and fails only at 12
   intended repository, Redis-progress, and application-service TODO gates.
+- Project 6 reference passes Ruff, format checking, Pyright, and 15 pytest
+  tests covering graph transitions, interrupts, SQLite restart, and replay.
+- Project 6 private holdout passes all five mentor checks.
+- Project 6 start and resume CLI paths work against persisted SQLite checkpoints
+  and decisions.
+- Project 6 builds both a wheel and source distribution with uv and Hatchling.
+- Project 6 learner starter passes three schema and architecture tests and fails
+  only at 12 intended policy, graph, and durable-sink TODO gates.
 
 ## Deliberately not verified
 
@@ -93,6 +109,9 @@ Updated: **2026-07-12**
 
 ## Next vertical slice
 
-- M18: LangGraph state and explicit workflows.
-- M19: Persistence, interrupts, recovery, and human approval.
-- Project 6: Durable Release Readiness Workflow.
+- M20: MCP concepts and FastMCP implementation.
+- M21: GitHub REST APIs, webhooks, and safe actions.
+- M22: Customer-facing packages with uv and Hatchling.
+- M23: Docker and local multi-service delivery.
+- M24: Prototype-to-production review.
+- Project 7: GitHub Workflow MCP Service.

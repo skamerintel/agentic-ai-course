@@ -14,6 +14,7 @@ PROJECTS = {
     "p03": ROOT / "course/projects/p03-operations-tool-agent",
     "p04": ROOT / "course/projects/p04-eval-driven-issue-triage",
     "p05": ROOT / "course/projects/p05-asynchronous-agent-job-service",
+    "p06": ROOT / "course/projects/p06-durable-release-readiness-workflow",
 }
 
 
