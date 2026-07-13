@@ -1,0 +1,8 @@
+{"scenario_id":"S001","name":"normal completion","issue_id":"ISS-101","idempotency_key":"idem-normal-101","provider":"success","expected_terminal_state":"succeeded","slices":["happy_path"]}
+{"scenario_id":"S002","name":"identical retry","issue_id":"ISS-102","idempotency_key":"idem-duplicate-102","provider":"success","expected_terminal_state":"succeeded","slices":["duplicate_submission"]}
+{"scenario_id":"S003","name":"conflicting retry","issue_id":"ISS-103","idempotency_key":"idem-conflict-103","provider":"success","expected_terminal_state":"queued","slices":["idempotency_conflict"]}
+{"scenario_id":"S004","name":"provider timeout","issue_id":"ISS-104","idempotency_key":"idem-timeout-104","provider":"timeout","expected_terminal_state":"failed","slices":["provider_failure"]}
+{"scenario_id":"S005","name":"cancel queued job","issue_id":"ISS-105","idempotency_key":"idem-cancel-105","provider":"success","expected_terminal_state":"cancelled","slices":["cancellation"]}
+{"scenario_id":"S006","name":"cancel running job","issue_id":"ISS-106","idempotency_key":"idem-race-106","provider":"slow_success","expected_terminal_state":"cancelled","slices":["cancellation","race"]}
+{"scenario_id":"S007","name":"progress expires","issue_id":"ISS-107","idempotency_key":"idem-expiry-107","provider":"success","expected_terminal_state":"succeeded","slices":["redis_expiry"]}
+{"scenario_id":"S008","name":"process restarts after claim","issue_id":"ISS-108","idempotency_key":"idem-restart-108","provider":"slow_success","expected_terminal_state":"running","slices":["restart","recovery_required"]}

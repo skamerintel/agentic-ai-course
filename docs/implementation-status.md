@@ -7,7 +7,7 @@ Updated: **2026-07-12**
 - Formal course specification.
 - Curriculum roadmap and seven-project sequence.
 - Official reference catalog.
-- M00-M13 lesson materials.
+- M00-M17 lesson materials.
 - M01 generated Git conflict lab.
 - M02 flawed-test exercise, mentor acceptance tests, and reference repair.
 - M03 local HTTP failure simulator and tested reference async client.
@@ -32,8 +32,17 @@ Updated: **2026-07-12**
   regression comparison, deterministic ownership, inspectable lexical
   retrieval, context-size reporting, and live OpenAI structured-output triage.
 - Project 4 private four-record mentor holdout with reference predictions.
+- Project 5 API requirements, job and load scenarios, monolith review exercise,
+  Docker Compose development services, starter workspace, tests, rubrics, and
+  architecture, state, data, testing, incident, and portfolio templates.
+- Project 5 reference FastAPI application factory, typed HTTP contracts,
+  SQLAlchemy job/attempt/audit repository, transaction-safe state transitions,
+  durable idempotency, Redis progress adapter, in-process runner, deterministic
+  provider, and optional OpenAI Responses provider.
+- Project 5 private mentor holdout covering conflicting retries, cancellation
+  races, transient-progress loss, and secret-bearing provider exceptions.
 - `coursectl.py` project materialization and configurable honor-system solution
-  access for Projects 1 through 4.
+  access for Projects 1 through 5.
 
 ## Verification completed
 
@@ -65,6 +74,12 @@ Updated: **2026-07-12**
   private four-record mentor holdout.
 - Project 4 learner starter passes its two data-contract tests and fails only at
   the intended evaluator, ownership, and retrieval TODOs.
+- Project 5 reference passes Ruff, format checking, Pyright, 18 offline pytest
+  tests, and one opt-in Docker smoke test is skipped by default.
+- Project 5 private holdout passes all four operational scenarios.
+- Project 5 builds both a wheel and source distribution with uv and Hatchling.
+- Project 5 learner starter passes six foundational tests and fails only at 12
+  intended repository, Redis-progress, and application-service TODO gates.
 
 ## Deliberately not verified
 
@@ -73,11 +88,11 @@ Updated: **2026-07-12**
   repository's default automated verification.
 - GitHub pull-request and mentor-review workflows require the learner's remote
   repository and cannot be completed by repository tests.
+- Project 5's real PostgreSQL and Redis smoke test requires the learner or
+  mentor to start the supplied Docker Compose services explicitly.
 
 ## Next vertical slice
 
-- M14: FastAPI service architecture.
-- M15: PostgreSQL and SQLAlchemy state.
-- M16: Redis, asynchronous jobs, and streamed progress.
-- M17: Integration testing and operational diagnosis.
-- Project 5: Asynchronous Agent Job Service.
+- M18: LangGraph state and explicit workflows.
+- M19: Persistence, interrupts, recovery, and human approval.
+- Project 6: Durable Release Readiness Workflow.

@@ -1,0 +1,4 @@
+{"scenario_id":"H001","required_status":"conflict","required_evidence":["one durable job","request fingerprint differs"]}
+{"scenario_id":"H002","required_status":"cancelled","required_evidence":["cancel_requested event","no result persisted"]}
+{"scenario_id":"H003","required_status":"succeeded","required_evidence":["result available","audit available","progress may be empty"]}
+{"scenario_id":"H004","required_status":"failed","required_evidence":["provider_internal_error","secret absent from public snapshot"]}

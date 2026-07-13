@@ -1,0 +1,33 @@
+{
+  "submit": {
+    "method": "POST",
+    "path": "/v1/jobs",
+    "headers": {"x-correlation-id": "corr-demo-1"},
+    "body": {
+      "idempotency_key": "idem-demo-1",
+      "issue": {
+        "issue_id": "ISS-DEMO-1",
+        "repo": "acme/payments-service",
+        "title": "Duplicate authorization after retry",
+        "body": "A timeout retry created a second authorization."
+      }
+    },
+    "expected_status": 202
+  },
+  "poll": {
+    "method": "GET",
+    "path_template": "/v1/jobs/{job_id}",
+    "expected_status": 200
+  },
+  "result_before_completion": {
+    "method": "GET",
+    "path_template": "/v1/jobs/{job_id}/result",
+    "expected_status": 409,
+    "expected_error_code": "result_not_ready"
+  },
+  "cancel": {
+    "method": "DELETE",
+    "path_template": "/v1/jobs/{job_id}",
+    "expected_status": 202
+  }
+}

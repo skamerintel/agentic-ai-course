@@ -1,0 +1,4 @@
+{"scenario_id":"H001","name":"same key changed body","risk":"idempotency_conflict","expected":"reject second request"}
+{"scenario_id":"H002","name":"cancel while provider blocked","risk":"cancellation_race","expected":"cancelled without result"}
+{"scenario_id":"H003","name":"progress storage lost after success","risk":"redis_loss","expected":"durable result and audit remain"}
+{"scenario_id":"H004","name":"unexpected provider exception contains secret","risk":"error_disclosure","expected":"classified generic failure"}
