@@ -4,4 +4,6 @@ version = "0.1.0"
 description = "A mastery-based LLM application and agent engineering course"
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "pydantic-ai-slim[bedrock]>=2.9.0",
+]

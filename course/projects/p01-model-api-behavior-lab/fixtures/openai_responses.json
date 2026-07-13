@@ -1,0 +1,57 @@
+{
+  "INC-001": {
+    "id": "resp_fixture_001",
+    "model": "openai-fixture-model",
+    "output": [
+      {"id": "reason_fixture_001", "type": "reasoning", "summary": []},
+      {
+        "id": "msg_fixture_001",
+        "type": "message",
+        "role": "assistant",
+        "content": [
+          {
+            "type": "output_text",
+            "text": "US checkout API requests saw elevated 503 errors from 14:05 to 14:32 UTC after Redis memory exhaustion during a catalog promotion. The team added cache capacity, error rates recovered, and no completed orders were lost, though some customers retried."
+          }
+        ]
+      }
+    ],
+    "usage": {"input_tokens": 126, "output_tokens": 52, "total_tokens": 178}
+  },
+  "INC-002": {
+    "id": "resp_fixture_002",
+    "model": "openai-fixture-model",
+    "output": [
+      {
+        "id": "msg_fixture_002",
+        "type": "message",
+        "role": "assistant",
+        "content": [
+          {
+            "type": "output_text",
+            "text": "The payroll export reached the vendor at 06:18 CT, 18 minutes late, after vendor API rate limits delayed delivery. Internal generation and payroll calculations were unaffected, and there is no indication of employee-data exposure."
+          }
+        ]
+      }
+    ],
+    "usage": {"input_tokens": 111, "output_tokens": 43, "total_tokens": 154}
+  },
+  "INC-003": {
+    "id": "resp_fixture_003",
+    "model": "openai-fixture-model",
+    "output": [
+      {
+        "id": "msg_fixture_003",
+        "type": "message",
+        "role": "assistant",
+        "content": [
+          {
+            "type": "output_text",
+            "text": "Mobile version 4.12 caused startup crashes for Android 14 users with biometric login, with crash-free sessions falling to 71% for that segment. Rollout stopped at 25% and version 4.11 was restored; the suspected lifecycle cause is not confirmed."
+          }
+        ]
+      }
+    ],
+    "usage": {"input_tokens": 106, "output_tokens": 49, "total_tokens": 155}
+  }
+}
