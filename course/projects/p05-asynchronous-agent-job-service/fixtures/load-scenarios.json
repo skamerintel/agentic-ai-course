@@ -1,0 +1,27 @@
+{
+  "scenarios": [
+    {
+      "name": "retry_after_client_timeout",
+      "concurrency": 5,
+      "same_idempotency_key": true,
+      "expected_distinct_jobs": 1
+    },
+    {
+      "name": "cancel_completion_race",
+      "concurrency": 2,
+      "operations": ["cancel", "complete"],
+      "accepted_terminal_states": ["cancelled", "succeeded"],
+      "invariant": "the audit order must explain the winner"
+    },
+    {
+      "name": "redis_expiry",
+      "delete_progress_key": true,
+      "invariant": "status, result, attempts, and audit remain available"
+    },
+    {
+      "name": "restart_during_provider_call",
+      "terminate_after_state": "running",
+      "invariant": "the durable record remains running and needs reconciliation"
+    }
+  ]
+}

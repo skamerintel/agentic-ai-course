@@ -154,6 +154,7 @@ model selection. Prefer capability checks and documented API behavior.
 
 - [FastAPI tutorial](https://fastapi.tiangolo.com/tutorial/)
 - [FastAPI dependencies](https://fastapi.tiangolo.com/tutorial/dependencies/)
+- [Lifespan events](https://fastapi.tiangolo.com/advanced/events/)
 
 ### REF-FASTAPI-ASYNC
 
@@ -171,11 +172,14 @@ model selection. Prefer capability checks and documented API behavior.
 
 - [SQLAlchemy unified tutorial](https://docs.sqlalchemy.org/en/20/tutorial/)
 - [SQLAlchemy ORM quick start](https://docs.sqlalchemy.org/en/20/orm/quickstart.html)
+- [SQLAlchemy session basics](https://docs.sqlalchemy.org/en/20/orm/session_basics.html)
+- [Transactions and connection management](https://docs.sqlalchemy.org/en/20/orm/session_transaction.html)
 - [SQLAlchemy asyncio](https://docs.sqlalchemy.org/en/20/orm/extensions/asyncio.html)
 
 ### REF-REDIS
 
 - [redis-py guide](https://redis.io/docs/latest/develop/clients/redis-py/)
+- [Redis Pub/Sub](https://redis.io/docs/latest/develop/pubsub/)
 
 ## Agent orchestration and MCP
 

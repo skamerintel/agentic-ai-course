@@ -1,0 +1,30 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: job_service
+      POSTGRES_USER: job_service
+      POSTGRES_PASSWORD: job_service
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U job_service -d job_service"]
+      interval: 2s
+      timeout: 2s
+      retries: 15
+    volumes:
+      - job_service_postgres:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7-alpine
+    command: ["redis-server", "--save", "", "--appendonly", "no"]
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 2s
+      timeout: 2s
+      retries: 15
+
+volumes:
+  job_service_postgres:
