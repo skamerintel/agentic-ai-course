@@ -43,6 +43,17 @@ class CourseControlTests(unittest.TestCase):
             self.assertTrue((destination / "reports/schema-decision.md").is_file())
             self.assertTrue((destination / "weak-schema-review.md").is_file())
 
+    def test_start_project_three_copies_agent_assets(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            destination = Path(temporary) / "p03"
+
+            coursectl.start_project("p03", destination)
+
+            self.assertTrue((destination / "data/services.json").is_file())
+            self.assertTrue((destination / "fixtures/scenarios.json").is_file())
+            self.assertTrue((destination / "reports/tool-catalog.md").is_file())
+            self.assertTrue((destination / "broken-agent-loop-review.md").is_file())
+
 
 if __name__ == "__main__":
     unittest.main()

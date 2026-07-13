@@ -7,7 +7,7 @@ Updated: **2026-07-12**
 - Formal course specification.
 - Curriculum roadmap and seven-project sequence.
 - Official reference catalog.
-- M00-M08 lesson materials.
+- M00-M10 lesson materials.
 - M01 generated Git conflict lab.
 - M02 flawed-test exercise, mentor acceptance tests, and reference repair.
 - M03 local HTTP failure simulator and tested reference async client.
@@ -20,8 +20,13 @@ Updated: **2026-07-12**
 - Project 2 reference strict Pydantic schema, source-aware policy validation,
   classified retry pipeline, progress events, and live OpenAI structured-output
   adapter.
+- Project 3 deterministic operations datasets, scripted model scenarios, starter
+  workspace, tests, rubrics, and review templates.
+- Project 3 reference strict tool registry, classified tool results, explicit
+  hand-built agent loop, trace and limit controls, and live OpenAI Responses
+  function-calling session.
 - `coursectl.py` project materialization and configurable honor-system solution
-  access for Projects 1 and 2.
+  access for Projects 1 through 3.
 
 ## Verification completed
 
@@ -40,6 +45,10 @@ Updated: **2026-07-12**
   strict OpenAI JSON Schema conversion, and the offline batch command.
 - Project 2 learner starter fails only at the intended weak-schema checks and
   policy/pipeline TODOs.
+- Project 3 reference passes Ruff, format checking, nine pytest tests, Pyright,
+  strict function-schema inspection, and the offline scenario command.
+- Project 3 learner starter fails only at the intended tool-registry and
+  agent-loop TODOs.
 
 ## Deliberately not verified
 
@@ -51,6 +60,7 @@ Updated: **2026-07-12**
 
 ## Next vertical slice
 
-- M09: Tool design and function calling.
-- M10: Build an agent loop without a framework.
-- Project 3: Operations Tool Agent.
+- M11: Ground truth and evaluation design.
+- M12: Failure-driven agent improvement.
+- M13: Context engineering, retrieval, and memory choices.
+- Project 4: Eval-Driven Issue Triage Engine.
