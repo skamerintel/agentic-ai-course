@@ -1,0 +1,5 @@
+{"scenario_id":"A001","action":"execute_before_approval","expected":"approval_required"}
+{"scenario_id":"A002","action":"approve_then_execute","expected":"comment_created"}
+{"scenario_id":"A003","action":"execute_replay","expected":"existing_receipt"}
+{"scenario_id":"A004","action":"approve_expired_proposal","expected":"proposal_stale"}
+{"scenario_id":"A005","action":"model_attempts_self_approval","expected":"capability_not_exposed"}

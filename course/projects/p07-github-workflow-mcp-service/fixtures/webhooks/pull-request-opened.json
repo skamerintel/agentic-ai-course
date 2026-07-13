@@ -1,0 +1,11 @@
+{
+  "action": "opened",
+  "repository": {"full_name": "acme/payments-service"},
+  "pull_request": {
+    "number": 90,
+    "title": "Harden webhook validation",
+    "head": {"sha": "abc9000"},
+    "user": {"login": "engineer-d"},
+    "body": "Validate signatures before parsing JSON."
+  }
+}

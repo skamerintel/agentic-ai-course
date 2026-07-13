@@ -201,6 +201,8 @@ model selection. Prefer capability checks and documented API behavior.
 - [FastMCP quickstart](https://gofastmcp.com/getting-started/quickstart)
 - [FastMCP server](https://gofastmcp.com/servers/server)
 - [FastMCP client](https://gofastmcp.com/clients/client)
+- [FastMCP resources](https://gofastmcp.com/servers/resources)
+- [FastMCP client transports](https://gofastmcp.com/clients/transports)
 
 ### REF-FASTMCP-OPERATIONS
 
@@ -208,6 +210,7 @@ model selection. Prefer capability checks and documented API behavior.
 - [FastMCP authentication](https://gofastmcp.com/servers/auth/authentication)
 - [Run a FastMCP server](https://gofastmcp.com/deployment/running-server)
 - [FastMCP HTTP deployment](https://gofastmcp.com/deployment/http)
+- [Testing FastMCP servers](https://gofastmcp.com/servers/testing)
 
 ## GitHub integration
 
@@ -216,6 +219,8 @@ model selection. Prefer capability checks and documented API behavior.
 - [Getting started with the GitHub REST API](https://docs.github.com/en/rest/using-the-rest-api/getting-started-with-the-rest-api)
 - [Authenticating to the REST API](https://docs.github.com/en/rest/authentication/authenticating-to-the-rest-api)
 - [REST API best practices](https://docs.github.com/en/rest/using-the-rest-api/best-practices-for-using-the-rest-api)
+- [REST API pagination](https://docs.github.com/en/rest/using-the-rest-api/using-pagination-in-the-rest-api)
+- [REST API rate limits](https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api)
 
 ### REF-GITHUB-PRS
 
@@ -226,6 +231,7 @@ model selection. Prefer capability checks and documented API behavior.
 - [About webhooks](https://docs.github.com/en/webhooks/about-webhooks)
 - [Using webhooks](https://docs.github.com/en/webhooks/using-webhooks)
 - [Validating webhook deliveries](https://docs.github.com/en/webhooks/using-webhooks/validating-webhook-deliveries)
+- [Webhook best practices](https://docs.github.com/en/webhooks/using-webhooks/best-practices-for-using-webhooks)
 
 ## Packaging and containers
 
@@ -234,6 +240,8 @@ model selection. Prefer capability checks and documented API behavior.
 - [Docker get started](https://docs.docker.com/get-started/)
 - [Writing a Dockerfile](https://docs.docker.com/get-started/docker-concepts/building-images/writing-a-dockerfile/)
 - [Docker Compose](https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-docker-compose/)
+- [Docker build best practices](https://docs.docker.com/build/building/best-practices/)
+- [Compose file reference](https://docs.docker.com/reference/compose-file/)
 
 ## Security concepts
 

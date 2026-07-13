@@ -1,0 +1,47 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "github-workflow-mcp"
+version = "0.1.0"
+description = "A guarded GitHub workflow service built with FastMCP"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+  "fastmcp>=3.4,<4",
+  "httpx",
+  "pydantic",
+  "uvicorn",
+]
+
+[project.scripts]
+github-workflow-mcp = "github_workflow_mcp.cli:main"
+
+[dependency-groups]
+dev = ["asgi-lifespan", "pyright", "pytest", "pytest-asyncio", "ruff"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/github_workflow_mcp"]
+
+[tool.hatch.build]
+exclude = ["/.gitignore"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src/github_workflow_mcp", "README.md", "pyproject.toml"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.pyright]
+include = ["src"]
+typeCheckingMode = "basic"

@@ -7,7 +7,7 @@ Updated: **2026-07-12**
 - Formal course specification.
 - Curriculum roadmap and seven-project sequence.
 - Official reference catalog.
-- M00-M19 lesson materials.
+- M00-M24 lesson materials.
 - M01 generated Git conflict lab.
 - M02 flawed-test exercise, mentor acceptance tests, and reference repair.
 - M03 local HTTP failure simulator and tested reference async client.
@@ -49,8 +49,18 @@ Updated: **2026-07-12**
   approve/edit/reject paths, and idempotent SQLite publication sink.
 - Project 6 private mentor holdout covering invalid resume data, checkpointed
   evidence versus changed source data, crash replay, and thread isolation.
+- Project 7 capability and permission policies, GitHub API and webhook fixtures,
+  approval scenarios, broad-tool and delivery review exercises, starter
+  workspace, rubrics, and integration, package, container, readiness, and
+  portfolio templates.
+- Project 7 reference bounded FastMCP tools and resource, fixture and HTTP GitHub
+  gateways, pagination and failure classification, durable proposal/approval,
+  marker-reconciled comment execution, signed webhook ingestion, and delivery
+  deduplication.
+- Project 7 multi-stage installed-wheel Dockerfile, Compose fixture evaluation,
+  administrative approval CLI, and private trust-boundary holdout.
 - `coursectl.py` project materialization and configurable honor-system solution
-  access for Projects 1 through 6.
+  access for Projects 1 through 7.
 
 ## Verification completed
 
@@ -96,6 +106,17 @@ Updated: **2026-07-12**
 - Project 6 builds both a wheel and source distribution with uv and Hatchling.
 - Project 6 learner starter passes three schema and architecture tests and fails
   only at 12 intended policy, graph, and durable-sink TODO gates.
+- Project 7 reference passes Ruff, format checking, Pyright, and 20 pytest tests
+  covering MCP capabilities, GitHub HTTP behavior, approval, and webhooks.
+- Project 7 private holdout passes all five trust-boundary and replay scenarios.
+- Project 7 builds a clean wheel and source distribution; the wheel contains
+  only runtime package files and installs successfully in a clean environment.
+- The clean-installed Project 7 package constructs a FastMCP server and executes
+  a deterministic client tool outside the repository checkout.
+- Project 7 Compose configuration and Docker BuildKit static checks validate
+  successfully.
+- Project 7 learner starter passes seven model, fixture, and architecture tests
+  and fails only at 13 intended HTTP gateway, state, MCP, and webhook TODO gates.
 
 ## Deliberately not verified
 
@@ -106,12 +127,13 @@ Updated: **2026-07-12**
   repository and cannot be completed by repository tests.
 - Project 5's real PostgreSQL and Redis smoke test requires the learner or
   mentor to start the supplied Docker Compose services explicitly.
+- Project 7's Docker image build and external container smoke test require an
+  explicit learner or mentor Docker run; repository verification validates its
+  Compose configuration and clean installed-wheel runtime separately.
 
 ## Next vertical slice
 
-- M20: MCP concepts and FastMCP implementation.
-- M21: GitHub REST APIs, webhooks, and safe actions.
-- M22: Customer-facing packages with uv and Hatchling.
-- M23: Docker and local multi-service delivery.
-- M24: Prototype-to-production review.
-- Project 7: GitHub Workflow MCP Service.
+- M25: Capstone discovery and architecture.
+- M26: Capstone implementation and evaluation.
+- M27: Portfolio, résumé, and interview defense.
+- Capstone selection and implementation.

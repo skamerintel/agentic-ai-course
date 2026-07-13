@@ -1,0 +1,32 @@
+{
+  "scenarios": [
+    {
+      "name": "two_page_issue_list",
+      "responses": [200, 200],
+      "expected_items": 3,
+      "expected_requests": 2
+    },
+    {
+      "name": "pagination_cap",
+      "responses": [200, 200, 200],
+      "maximum_pages": 2,
+      "expected_truncated": true
+    },
+    {
+      "name": "primary_rate_limit",
+      "status": 403,
+      "headers": {"x-ratelimit-remaining": "0", "x-ratelimit-reset": "1893456000"},
+      "expected_error": "rate_limited"
+    },
+    {
+      "name": "permission_denied",
+      "status": 403,
+      "headers": {"x-ratelimit-remaining": "4999"},
+      "expected_error": "permission_denied"
+    },
+    {
+      "name": "stale_proposal",
+      "expected_error": "proposal_stale"
+    }
+  ]
+}

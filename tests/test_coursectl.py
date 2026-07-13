@@ -93,6 +93,19 @@ class CourseControlTests(unittest.TestCase):
             self.assertTrue((destination / "broken-graph-review.md").is_file())
             self.assertFalse((destination / "data/holdout-scenarios.jsonl").exists())
 
+    def test_start_project_seven_copies_delivery_assets_only(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            destination = Path(temporary) / "p07"
+
+            coursectl.start_project("p07", destination)
+
+            self.assertTrue((destination / "Dockerfile").is_file())
+            self.assertTrue((destination / "docker-compose.yml").is_file())
+            self.assertTrue((destination / "fixtures/github-api.json").is_file())
+            self.assertTrue((destination / "reports/capability-catalog.md").is_file())
+            self.assertTrue((destination / "broken-tool-catalog-review.md").is_file())
+            self.assertFalse((destination / "data/holdout-scenarios.jsonl").exists())
+
 
 if __name__ == "__main__":
     unittest.main()

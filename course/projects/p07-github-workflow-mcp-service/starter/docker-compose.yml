@@ -1,0 +1,20 @@
+services:
+  github-mcp:
+    build:
+      context: .
+    ports:
+      - "8000:8000"
+    environment:
+      GITHUB_MCP_MODE: fixture
+      GITHUB_MCP_FIXTURE_PATH: /data/github-api.json
+      GITHUB_MCP_POLICY_PATH: /data/capability-policy.json
+      GITHUB_MCP_STATE_PATH: /state/github-mcp.sqlite
+      GITHUB_MCP_WEBHOOK_SECRET: local-development-secret
+    volumes:
+      - ./fixtures/github-api.json:/data/github-api.json:ro
+      - ./data/capability-policy.json:/data/capability-policy.json:ro
+      - github_mcp_state:/state
+    restart: unless-stopped
+
+volumes:
+  github_mcp_state:
