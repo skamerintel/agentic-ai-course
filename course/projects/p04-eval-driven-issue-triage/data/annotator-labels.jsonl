@@ -1,0 +1,8 @@
+{"issue_id":"D003","annotator":"support-lead","category":"bug","urgency":"low","owner":"developer_experience","note":"Users experience a broken quickstart."}
+{"issue_id":"D003","annotator":"docs-lead","category":"docs","urgency":"low","owner":"docs","note":"The defect exists only in documentation."}
+{"issue_id":"D005","annotator":"security-engineer","category":"security","urgency":"high","owner":"security","note":"Token was exposed but revoked and logs are access controlled."}
+{"issue_id":"D005","annotator":"release-manager","category":"security","urgency":"critical","owner":"security","note":"Any deployment-token exposure should be critical."}
+{"issue_id":"D006","annotator":"platform-lead","category":"bug","urgency":"normal","owner":"platform","note":"Build failures default to platform until a repository is known."}
+{"issue_id":"D006","annotator":"developer-experience-lead","category":"question","urgency":"low","owner":"developer_experience","note":"There is too little evidence to confirm a bug."}
+{"issue_id":"D010","annotator":"sdk-engineer","category":"bug","urgency":"normal","owner":"developer_experience","note":"The example code does not run."}
+{"issue_id":"D010","annotator":"docs-lead","category":"docs","urgency":"normal","owner":"docs","note":"Only a documentation sample is stale."}

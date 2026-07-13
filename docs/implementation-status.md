@@ -7,7 +7,7 @@ Updated: **2026-07-12**
 - Formal course specification.
 - Curriculum roadmap and seven-project sequence.
 - Official reference catalog.
-- M00-M10 lesson materials.
+- M00-M13 lesson materials.
 - M01 generated Git conflict lab.
 - M02 flawed-test exercise, mentor acceptance tests, and reference repair.
 - M03 local HTTP failure simulator and tested reference async client.
@@ -25,12 +25,19 @@ Updated: **2026-07-12**
 - Project 3 reference strict tool registry, classified tool results, explicit
   hand-built agent loop, trace and limit controls, and live OpenAI Responses
   function-calling session.
+- Project 4 development corpus, mentor ground truth, annotator labels,
+  ownership rules, known-issue corpus, retrieval queries, baseline and candidate
+  predictions, starter workspace, tests, rubrics, and review templates.
+- Project 4 reference multi-metric and slice evaluator, dataset fingerprints,
+  regression comparison, deterministic ownership, inspectable lexical
+  retrieval, context-size reporting, and live OpenAI structured-output triage.
+- Project 4 private four-record mentor holdout with reference predictions.
 - `coursectl.py` project materialization and configurable honor-system solution
-  access for Projects 1 through 3.
+  access for Projects 1 through 4.
 
 ## Verification completed
 
-- Root `unittest` suite passes.
+- `coursectl` `unittest` suite passes.
 - Repository Python files pass Ruff lint and format checks.
 - JSON, JSONL, and TOML assets parse successfully.
 - Markdown local links resolve.
@@ -49,6 +56,15 @@ Updated: **2026-07-12**
   strict function-schema inspection, and the offline scenario command.
 - Project 3 learner starter fails only at the intended tool-registry and
   agent-loop TODOs.
+- Project 4 reference passes Ruff, format checking, nine pytest tests, Pyright,
+  baseline/candidate comparison, and retrieval evaluation commands.
+- Project 4 baseline and candidate fixtures expose dimension-specific gains and
+  an intentional feature-slice regression; retrieval reaches 1.0 hit@3 and MRR
+  while reporting context size.
+- Project 4 reference predictions score 1.0 on every overall metric across the
+  private four-record mentor holdout.
+- Project 4 learner starter passes its two data-contract tests and fails only at
+  the intended evaluator, ownership, and retrieval TODOs.
 
 ## Deliberately not verified
 
@@ -60,7 +76,8 @@ Updated: **2026-07-12**
 
 ## Next vertical slice
 
-- M11: Ground truth and evaluation design.
-- M12: Failure-driven agent improvement.
-- M13: Context engineering, retrieval, and memory choices.
-- Project 4: Eval-Driven Issue Triage Engine.
+- M14: FastAPI service architecture.
+- M15: PostgreSQL and SQLAlchemy state.
+- M16: Redis, asynchronous jobs, and streamed progress.
+- M17: Integration testing and operational diagnosis.
+- Project 5: Asynchronous Agent Job Service.
