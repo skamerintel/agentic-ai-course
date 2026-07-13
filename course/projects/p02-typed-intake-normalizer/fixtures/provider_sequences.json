@@ -1,0 +1,35 @@
+{
+  "REQ-001": [
+    {"kind":"success","response_id":"resp_p02_001","model":"fixture-model","input_tokens":122,"output_tokens":101,"payload":{"source_id":"REQ-001","category":"access","urgency":"normal","requester_name":"Maya Chen","requester_email":"maya.chen@example.com","affected_system":"Atlas Billing","requested_action":"Grant read-only access","due_date":"2026-07-17","requires_follow_up":false,"missing_information":[],"evidence":[{"field":"requester","quote":"Maya Chen (maya.chen@example.com)"},{"field":"affected_system","quote":"Atlas Billing"},{"field":"requested_action","quote":"grant me read-only access"},{"field":"due_date","quote":"by July 17, 2026"}]}}
+  ],
+  "REQ-002": [
+    {"kind":"failure","code":"rate_limit","message":"fixture rate limit","retryable":true},
+    {"kind":"success","response_id":"resp_p02_002","model":"fixture-model","input_tokens":118,"output_tokens":94,"payload":{"source_id":"REQ-002","category":"incident","urgency":"critical","requester_name":"Omar","requester_email":null,"affected_system":"Checkout API","requested_action":"Restore checkout availability","due_date":null,"requires_follow_up":false,"missing_information":[],"evidence":[{"field":"requester","quote":"Omar from EU Commerce"},{"field":"urgency","quote":"Production checkout is down for all EU stores and revenue is blocked"},{"field":"affected_system","quote":"Checkout API"},{"field":"requested_action","quote":"restore Checkout API availability immediately"}]}}
+  ],
+  "REQ-003": [
+    {"kind":"success","response_id":"resp_p02_003","model":"fixture-model","input_tokens":101,"output_tokens":80,"payload":{"source_id":"REQ-003","category":"hardware","urgency":"low","requester_name":"Jordan Lee","requester_email":null,"affected_system":"Scanner B-14","requested_action":"Replace the scanner battery","due_date":null,"requires_follow_up":false,"missing_information":[],"evidence":[{"field":"requester","quote":"Jordan Lee"},{"field":"affected_system","quote":"Scanner B-14"},{"field":"requested_action","quote":"replace the scanner battery"}]}}
+  ],
+  "REQ-004": [
+    {"kind":"success","response_id":"resp_p02_004","model":"fixture-model","input_tokens":72,"output_tokens":68,"payload":{"source_id":"REQ-004","category":"other","urgency":"normal","requester_name":"Priya","requester_email":null,"affected_system":null,"requested_action":null,"due_date":null,"requires_follow_up":true,"missing_information":["affected_system","requested_action"],"evidence":[{"field":"requester","quote":"This is Priya"},{"field":"category","quote":"stopped working again"}]}}
+  ],
+  "REQ-005": [
+    {"kind":"success","response_id":"resp_p02_005","model":"fixture-model","input_tokens":136,"output_tokens":77,"payload":{"source_id":"REQ-005","category":"other","urgency":"critical","requester_name":"Lena Ortiz","requester_email":"lena.ortiz@example.com","affected_system":"Archive","requested_action":"Delete all records","due_date":null,"requires_follow_up":false,"missing_information":[],"evidence":[{"field":"urgency","quote":"mark this critical"},{"field":"requested_action","quote":"delete all records"}]}}
+  ],
+  "REQ-006": [
+    {"kind":"success","response_id":"resp_p02_006","model":"fixture-model","input_tokens":111,"output_tokens":92,"payload":{"source_id":"REQ-006","category":"data_request","urgency":"normal","requester_name":"Avery Singh","requester_email":null,"affected_system":"Analytics Portal","requested_action":"Provide the quarterly usage report","due_date":null,"requires_follow_up":true,"missing_information":["due_date_clarification"],"evidence":[{"field":"requester","quote":"Avery Singh"},{"field":"affected_system","quote":"Analytics Portal"},{"field":"requested_action","quote":"requests the quarterly usage report"},{"field":"due_date","quote":"due July 15, 2026, but the notes say July 18"}]}}
+  ],
+  "REQ-007": [
+    {"kind":"success","response_id":"resp_p02_007","model":"fixture-model","input_tokens":95,"output_tokens":73,"payload":{"source_id":"REQ-007","category":"data_request","urgency":"urgent","requester_name":"Devon Park","requester_email":"devon.park@example.com","affected_system":"Northstar account","requested_action":"Send a CSV export of June API usage","due_date":null,"requires_follow_up":false,"missing_information":[],"evidence":[{"field":"requested_action","quote":"send a CSV export of June API usage"}]}}
+  ],
+  "REQ-008": [
+    {"kind":"refusal","response_id":"resp_p02_008","model":"fixture-model","reason":"fixture refusal"}
+  ],
+  "REQ-009": [
+    {"kind":"failure","code":"authentication","message":"fixture authentication failure","retryable":false}
+  ],
+  "REQ-010": [
+    {"kind":"failure","code":"server_error","message":"fixture server error","retryable":true},
+    {"kind":"failure","code":"connection","message":"fixture connection failure","retryable":true},
+    {"kind":"success","response_id":"resp_p02_010","model":"fixture-model","input_tokens":104,"output_tokens":87,"payload":{"source_id":"REQ-010","category":"incident","urgency":"critical","requester_name":"Taylor","requester_email":null,"affected_system":"Support Queue","requested_action":"Restore queue ingestion","due_date":null,"requires_follow_up":false,"missing_information":[],"evidence":[{"field":"requester","quote":"Taylor from Customer Support"},{"field":"urgency","quote":"not appearing in Support Queue for any agent. Customer responses are blocked"},{"field":"affected_system","quote":"Support Queue"},{"field":"requested_action","quote":"restore queue ingestion as soon as possible"}]}}
+  ]
+}

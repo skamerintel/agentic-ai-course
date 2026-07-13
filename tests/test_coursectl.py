@@ -32,6 +32,17 @@ class CourseControlTests(unittest.TestCase):
             self.assertTrue((destination / "fixtures/openai_responses.json").is_file())
             self.assertTrue((destination / "reports/experiment-contract.md").is_file())
 
+    def test_start_project_two_copies_schema_assets(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            destination = Path(temporary) / "p02"
+
+            coursectl.start_project("p02", destination)
+
+            self.assertTrue((destination / "data/requests.jsonl").is_file())
+            self.assertTrue((destination / "data/ground_truth.jsonl").is_file())
+            self.assertTrue((destination / "reports/schema-decision.md").is_file())
+            self.assertTrue((destination / "weak-schema-review.md").is_file())
+
 
 if __name__ == "__main__":
     unittest.main()

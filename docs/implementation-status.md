@@ -7,7 +7,7 @@ Updated: **2026-07-12**
 - Formal course specification.
 - Curriculum roadmap and seven-project sequence.
 - Official reference catalog.
-- M00-M06 lesson materials.
+- M00-M08 lesson materials.
 - M01 generated Git conflict lab.
 - M02 flawed-test exercise, mentor acceptance tests, and reference repair.
 - M03 local HTTP failure simulator and tested reference async client.
@@ -15,8 +15,13 @@ Updated: **2026-07-12**
   fixtures, starter workspace, tests, rubrics, templates, and flawed report.
 - Project 1 reference normalization, scoring, aggregation, and live provider
   adapters.
+- Project 2 business dataset, mentor ground truth, deterministic provider
+  sequences, starter workspace, tests, rubrics, and review templates.
+- Project 2 reference strict Pydantic schema, source-aware policy validation,
+  classified retry pipeline, progress events, and live OpenAI structured-output
+  adapter.
 - `coursectl.py` project materialization and configurable honor-system solution
-  access.
+  access for Projects 1 and 2.
 
 ## Verification completed
 
@@ -31,6 +36,10 @@ Updated: **2026-07-12**
   the offline experiment command.
 - Project 1 learner starter fails only at the intended normalization and scoring
   TODOs.
+- Project 2 reference passes Ruff, format checking, 12 pytest tests, Pyright,
+  strict OpenAI JSON Schema conversion, and the offline batch command.
+- Project 2 learner starter fails only at the intended weak-schema checks and
+  policy/pipeline TODOs.
 
 ## Deliberately not verified
 
@@ -42,6 +51,6 @@ Updated: **2026-07-12**
 
 ## Next vertical slice
 
-- M07: Structured outputs and Pydantic validation.
-- M08: Streaming, resilience, and model-call boundaries.
-- Project 2: Typed Intake Normalizer.
+- M09: Tool design and function calling.
+- M10: Build an agent loop without a framework.
+- Project 3: Operations Tool Agent.
