@@ -16,6 +16,7 @@ PROJECTS = {
     "p05": ROOT / "course/projects/p05-asynchronous-agent-job-service",
     "p06": ROOT / "course/projects/p06-durable-release-readiness-workflow",
     "p07": ROOT / "course/projects/p07-github-workflow-mcp-service",
+    "p08": ROOT / "course/projects/p08-capstone-studio",
 }
 
 

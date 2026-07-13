@@ -1,0 +1,27 @@
+[
+  {
+    "id": "walking-skeleton",
+    "required_evidence": ["fixture-backed end-to-end trace", "FastAPI integration test", "validated model contract", "durable workflow record", "one scored evaluation case"],
+    "review_questions": ["What business decision is now possible?", "Which shortcuts are intentionally temporary?", "What fails if the model is unavailable?"]
+  },
+  {
+    "id": "evidence-and-boundaries",
+    "required_evidence": ["GitHub contract tests", "second API contract tests", "source-linked output", "failure classification", "redacted correlated logs", "untrusted-text authority test"],
+    "review_questions": ["Where is external data validated?", "How are rate limits and partial evidence represented?", "Can text expand capability?"]
+  },
+  {
+    "id": "durability-and-approval",
+    "required_evidence": ["checkpoint restart", "duplicate delivery replay", "out-of-band approval", "stale approval rejection", "idempotent or reconciled write", "Redis-loss explanation"],
+    "review_questions": ["What is the source of truth?", "What can safely be replayed?", "Can the model approve or execute without a human?"]
+  },
+  {
+    "id": "evaluation-and-iterations",
+    "required_evidence": ["versioned baseline", "failure ledger", "iteration one comparison", "iteration two comparison", "slice metrics", "holdout isolation proof"],
+    "review_questions": ["Why did each intervention target the observed failure?", "Which slice regressed?", "What evidence would reverse the chosen design?"]
+  },
+  {
+    "id": "delivery-and-defense",
+    "required_evidence": ["clean checks", "wheel and sdist inventory", "clean install", "Docker external smoke", "red-team report", "production-readiness review", "five-minute demo"],
+    "review_questions": ["What ships to the customer?", "What remains prototype-only?", "Which claim is strongest and how can it be reproduced?"]
+  }
+]

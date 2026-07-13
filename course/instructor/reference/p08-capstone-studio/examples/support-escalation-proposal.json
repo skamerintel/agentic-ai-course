@@ -1,0 +1,52 @@
+{
+  "title": "Support Escalation Evidence Investigator",
+  "domain": "support escalation investigation",
+  "primary_interface": "workflow_api",
+  "business_user": "platform support lead",
+  "business_outcome": "reduce time to an evidence-complete escalation handoff while preserving uncertainty and human control of customer or repository actions",
+  "success_metrics": ["evidence-complete handoff rate", "median investigation duration", "unsupported claim rate", "approved-action replay safety"],
+  "non_goals": ["general customer chatbot", "automatic refunds or remediation", "root-cause certainty", "multi-tenant production operation"],
+  "llm_justification": "Ticket narratives and repository evidence use inconsistent language and can conflict. A model can produce a bounded synthesis and proposed follow-up, while deterministic code verifies evidence identifiers, policy, state transitions, and authority.",
+  "workflow_steps": [
+    {"id":"accept-escalation","name":"Accept escalation job","mode":"deterministic","purpose":"Validate the request, establish correlation, and create durable state.","output_contract":"EscalationJob row and immutable input reference","failure_behavior":"Reject invalid requests without starting the graph."},
+    {"id":"gather-evidence","name":"Gather bounded evidence","mode":"tool","purpose":"Read the ticket, linked GitHub records, deployment state, and status incidents.","output_contract":"Typed evidence records with source IDs and observed timestamps","failure_behavior":"Classify timeout, permission, rate limit, not found, and partial evidence."},
+    {"id":"synthesize","name":"Synthesize investigation","mode":"model","purpose":"Reconcile narrative symptoms and conflicting evidence into bounded findings.","output_contract":"Strict InvestigationDraft with evidence IDs, uncertainty, and proposed actions","failure_behavior":"Classify provider or schema failure and preserve retry-safe graph state."},
+    {"id":"validate-draft","name":"Validate evidence and policy","mode":"deterministic","purpose":"Reject unknown evidence IDs, unsupported claims, forbidden actions, and stale source versions.","output_contract":"Validated investigation or explicit validation findings","failure_behavior":"Route to needs-review without executing any external action."},
+    {"id":"approve-follow-up","name":"Review consequential follow-up","mode":"human","purpose":"Allow a support lead to approve, edit, reject, or expire proposed writes.","output_contract":"Durable decision bound to proposal and evidence version","failure_behavior":"Remain interrupted; stale or invalid decisions are rejected."},
+    {"id":"execute-follow-up","name":"Execute approved follow-up","mode":"tool","purpose":"Post only the approved ticket note or GitHub issue with idempotent reconciliation.","output_contract":"External receipt and durable execution record","failure_behavior":"Reconcile uncertain writes before retry and surface unresolved state."}
+  ],
+  "integrations": [
+    {"name":"GitHub REST","kind":"github","purpose":"Read linked issues and pull requests and create an approved follow-up issue.","read":true,"write":true,"fixture_strategy":"Versioned repository, issue, pull request, pagination, rate-limit, and write-reconciliation fixtures.","failure_modes":["permission denied","rate limited","stale linked issue","uncertain write receipt"]},
+    {"name":"Support Ticket API","kind":"external","purpose":"Read escalation history and post an approved evidence-linked internal note.","read":true,"write":true,"fixture_strategy":"Versioned ticket histories, status transitions, unsafe text, and idempotency fixtures.","failure_modes":["ticket not found","conflicting version","rate limited","uncertain note write"]},
+    {"name":"Service Status API","kind":"external","purpose":"Read component state and incident timelines that may confirm or contradict the ticket.","read":true,"write":false,"fixture_strategy":"Versioned component and incident snapshots with delayed and missing updates.","failure_modes":["stale response","component missing","timeout","partial incident timeline"]}
+  ],
+  "model_boundary": {"provider":"OpenAI-compatible provider interface","api":"responses","structured_output":true,"configuration_policy":"Model identifier, timeout, retry budget, and reasoning settings are environment configuration; capability and evaluation evidence control changes."},
+  "orchestration": {"framework":"langgraph","justification":"The workflow needs typed state, fan-in after multiple evidence tools, checkpointed provider retries, a durable human interrupt, source-version validation on resume, and replay-safe recovery after uncertain external writes."},
+  "state_choices": [
+    {"name":"PostgreSQL","purpose":"Durable jobs, evidence versions, graph checkpoints, proposals, decisions, and execution receipts.","source_of_truth":true,"loss_behavior":"The workflow cannot safely continue; restore from backup and reconcile external receipts."},
+    {"name":"Redis","purpose":"Transient progress events, short-lived deduplication hints, and bounded rate-limit coordination.","source_of_truth":false,"loss_behavior":"Progress subscriptions and hints are lost, but durable jobs and replay safety remain correct."}
+  ],
+  "approval_points": [
+    {"action":"Post a support note or create a GitHub follow-up issue","approver":"authenticated platform support lead","enforcement_boundary":"A FastAPI administrative route outside the model-callable tool surface persists a decision bound to proposal and evidence hashes.","replay_strategy":"Execution checks proposal status, expiry, source hashes, idempotency key, and existing external marker before writing."}
+  ],
+  "evaluation": {"ground_truth_source":"Synthetic cases labeled from ticket, repository, deployment, and status evidence using a mentor-approved policy with adjudication.","dataset_size":48,"holdout_policy":"Freeze 12 untouched blind mentor cases before baseline implementation; development cases and holdout IDs remain separate.","metrics":["evidence precision and recall","unsupported claim rate","action-policy validity","workflow completion and recovery rate","median fixture latency"],"slices":["conflicting status evidence","prompt injection in ticket text","missing repository link","duplicate symptom","partial API failure"],"failure_taxonomy":["retrieval omission","unsupported synthesis","policy violation","provider/schema failure","API/state/replay failure"],"baseline":"Deterministic keyword and link-following workflow with no model synthesis.","iteration_budget":2},
+  "delivery": {"package_manager":"uv","build_backend":"hatchling","docker_smoke_test":"Start API, worker, PostgreSQL, and Redis; submit a fixture escalation; approve a proposal out of band; verify one reconciled write and result.","test_types":["unit","integration","contract","recovery","adversarial"],"milestones":[
+    {"name":"walking skeleton","demo":"One fixture escalation reaches a validated investigation result.","acceptance_evidence":["FastAPI integration test","graph trace and scored case"]},
+    {"name":"evidence boundaries","demo":"GitHub, ticket, and status failures remain classified and source-linked.","acceptance_evidence":["adapter contract tests","untrusted-text authority test"]},
+    {"name":"durability and approval","demo":"Restart, approve out of band, execute once, and replay safely.","acceptance_evidence":["recovery tests","approval and reconciliation trace"]},
+    {"name":"evaluation iterations","demo":"Compare baseline and two targeted interventions by slice.","acceptance_evidence":["versioned run reports","failure-ledger decisions"]},
+    {"name":"delivery and defense","demo":"Run clean install, Docker smoke, red team, and five-minute walkthrough.","acceptance_evidence":["package and image inventories","production-readiness report"]}
+  ]},
+  "optional_capabilities": {
+    "redis":{"enabled":true,"rationale":"Transient progress and coordination improve the asynchronous API without becoming durable truth.","clients":["FastAPI progress endpoint","worker rate-limit coordinator"],"exposed_actions":[]},
+    "fastmcp":{"enabled":false,"rationale":"No identified external MCP client needs this investigation capability; FastAPI is the supported product interface.","clients":[],"exposed_actions":[]}
+  },
+  "risks": [
+    {"id":"R1","description":"Untrusted ticket or GitHub text attempts to expand authority.","trigger":"External text contains tool or approval instructions.","mitigation":"Treat content as quoted evidence, use fixed tools, deterministic policy, and out-of-band approval.","owner":"learner"},
+    {"id":"R2","description":"Valid structured output cites evidence that does not exist.","trigger":"Draft contains an unknown or stale evidence identifier.","mitigation":"Deterministically verify every evidence ID and source hash before approval.","owner":"learner"},
+    {"id":"R3","description":"Crash after external write creates duplicate follow-up.","trigger":"External API succeeds before local receipt commits.","mitigation":"Use stable idempotency keys or markers and reconcile before retry.","owner":"learner"},
+    {"id":"R4","description":"Evaluation labels reward plausible prose instead of workflow correctness.","trigger":"High narrative score coexists with missing evidence or invalid actions.","mitigation":"Score evidence, policy, and workflow dimensions separately with deterministic checks.","owner":"mentor"},
+    {"id":"R5","description":"Integration scope prevents a polished delivery.","trigger":"Walking skeleton misses the first milestone review.","mitigation":"Freeze optional UI and MCP work and retain fixture-backed vertical scope.","owner":"learner"},
+    {"id":"R6","description":"Sensitive ticket data enters prompts or logs.","trigger":"Fixtures or traces contain secret-shaped or unnecessary customer fields.","mitigation":"Minimize fields, redact before provider and logging boundaries, and test redaction.","owner":"learner"}
+  ]
+}

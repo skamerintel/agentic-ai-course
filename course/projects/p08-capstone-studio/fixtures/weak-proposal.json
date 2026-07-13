@@ -1,0 +1,24 @@
+{
+  "title": "Universal Engineering Copilot",
+  "domain": "engineering",
+  "primary_interface": "chat",
+  "business_user": "everyone",
+  "business_outcome": "make engineering faster",
+  "success_metrics": ["good answers"],
+  "non_goals": ["none"],
+  "llm_justification": "AI is powerful.",
+  "workflow_steps": [
+    {"id":"ask","name":"Ask agent","mode":"model","purpose":"Do the work","output_contract":"text","failure_behavior":"retry"}
+  ],
+  "integrations": [
+    {"name":"GitHub","kind":"github","purpose":"access everything","read":true,"write":true,"fixture_strategy":"mock later","failure_modes":[]}
+  ],
+  "model_boundary": {"provider":"openai","api":"chat_completions","structured_output":false,"configuration_policy":"latest model"},
+  "orchestration": {"framework":"langgraph","justification":"It is required by the course."},
+  "state_choices": [{"name":"redis","purpose":"store everything","source_of_truth":true,"loss_behavior":"data is lost"}],
+  "approval_points": [],
+  "evaluation": {"ground_truth_source":"ask a few users","dataset_size":5,"holdout_policy":"reuse examples","metrics":["accuracy"],"slices":[],"failure_taxonomy":[],"baseline":"none","iteration_budget":0},
+  "delivery": {"package_manager":"pip","build_backend":"setuptools","docker_smoke_test":"run it","test_types":["unit"],"milestones":[{"name":"build","demo":"chat demo","acceptance_evidence":["works"]}]},
+  "optional_capabilities": {"redis":{"enabled":true,"rationale":"fast","clients":[],"exposed_actions":[]},"fastmcp":{"enabled":true,"rationale":"looks good","clients":[],"exposed_actions":["approve","shell"]}},
+  "risks": []
+}

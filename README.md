@@ -17,7 +17,7 @@ Course-wide behavior, including reference-solution access, is configured in
 
 ## Implemented materials
 
-- [M00-M24 and Projects 1-7](course/README.md)
+- [M00-M27, Projects 1-7, and the Project 8 Capstone Studio](course/README.md)
 
 Create the Project 1 learner workspace:
 
@@ -59,6 +59,12 @@ Create the Project 7 learner workspace:
 
 ```bash
 python coursectl.py start p07 work/p07
+```
+
+Create the Project 8 capstone studio workspace:
+
+```bash
+python coursectl.py start p08 work/p08
 ```
 
 Inspect configured reference-solution access:

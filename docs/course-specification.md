@@ -558,10 +558,13 @@ The learner completes the course when they have:
 - Produced the required GitHub and job-search artifacts.
 - Explained what remains between each project and a real production deployment.
 
-## 18. Decisions deferred to detailed curriculum design
+## 18. Decisions resolved or left configurable
 
-- Capstone business domain and external APIs beyond GitHub.
-- The detailed AI-reviewer prompt and scoring rubric.
+- The learner selects the capstone domain during M25 from four supplied briefs
+  or defends a custom domain. Support escalation investigation is the
+  recommended default, not a mandatory answer.
+- Project 8 supplies detailed AI, mentor, and technical-defense rubrics while
+  keeping the human mentor responsible for gate decisions.
 - Whether and where GitHub Actions becomes required rather than advanced.
 - Whether database migrations require a dedicated tool such as Alembic.
 - Whether the AI work log remains required after early learner feedback.

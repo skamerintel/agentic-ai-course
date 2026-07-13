@@ -827,7 +827,7 @@ Build course content in vertical slices rather than writing every lecture first:
 5. Implement M14-M17 and Project 5.
 6. Implement M18-M19 and Project 6.
 7. Implement M20-M24 and Project 7.
-8. Finalize capstone choices and implement M25-M27.
+8. Implement the learner-selected Project 8 Capstone Studio and M25-M27.
 
 Each slice must include readings, lesson material, starter assets, tests, review
 rubrics, a reference implementation, and both configured solution-access paths
