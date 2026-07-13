@@ -1,0 +1,48 @@
+{
+  "INC-001": {
+    "id": "msg_fixture_001",
+    "type": "message",
+    "role": "assistant",
+    "model": "anthropic-fixture-model",
+    "content": [
+      {
+        "type": "text",
+        "text": "US checkout requests experienced elevated 503 errors from 14:05 to 14:32 UTC because the Redis cache cluster exhausted memory during a catalog promotion. No completed orders were lost, although some customers retried."
+      }
+    ],
+    "stop_reason": "end_turn",
+    "usage": {"input_tokens": 124, "output_tokens": 42}
+  },
+  "INC-002": {
+    "id": "msg_fixture_002",
+    "type": "message",
+    "role": "assistant",
+    "model": "anthropic-fixture-model",
+    "content": [
+      {
+        "type": "text",
+        "text": "The payroll export was delivered at 06:18 CT after vendor API rate limits delayed transmission. Internal generation succeeded, calculations were unchanged, and there is no indication that employee data was exposed."
+      }
+    ],
+    "stop_reason": "end_turn",
+    "usage": {"input_tokens": 110, "output_tokens": 39}
+  },
+  "INC-003": {
+    "id": "msg_fixture_003",
+    "type": "message",
+    "role": "assistant",
+    "model": "anthropic-fixture-model",
+    "content": [
+      {
+        "type": "text",
+        "text": "Android 14 devices with biometric login experienced startup crashes in mobile version 4.12, reducing crash-free sessions to 71% for that segment. Rollout stopped at 25%, version 4.11 was restored, and the root cause remains unconfirmed."
+      },
+      {
+        "type": "text",
+        "text": "iOS and earlier Android versions were unaffected."
+      }
+    ],
+    "stop_reason": "end_turn",
+    "usage": {"input_tokens": 105, "output_tokens": 52}
+  }
+}

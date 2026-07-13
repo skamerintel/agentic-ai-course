@@ -562,7 +562,6 @@ The learner completes the course when they have:
 
 - Capstone business domain and external APIs beyond GitHub.
 - The detailed AI-reviewer prompt and scoring rubric.
-- The mechanism used to enforce configurable solution access.
 - Whether and where GitHub Actions becomes required rather than advanced.
 - Whether database migrations require a dedicated tool such as Alembic.
 - Whether the AI work log remains required after early learner feedback.

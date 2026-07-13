@@ -1,0 +1,69 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "BedrockBearerToken",
+            "Effect": "Allow",
+            "Action": [
+                "bedrock:CallWithBearerToken"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "BedrockInferenceSonnet5Only",
+            "Effect": "Allow",
+            "Action": [
+                "bedrock:InvokeModel",
+                "bedrock:InvokeModelWithResponseStream"
+            ],
+            "Resource": [
+                "arn:aws:bedrock:*::foundation-model/anthropic.claude-sonnet-5",
+                "arn:aws:bedrock:*:504724571589:inference-profile/us.anthropic.claude-sonnet-5",
+                "arn:aws:bedrock:*:504724571589:inference-profile/global.anthropic.claude-sonnet-5"
+            ]
+        },
+        {
+            "Sid": "BedrockReadOnly",
+            "Effect": "Allow",
+            "Action": [
+                "bedrock:GetFoundationModel",
+                "bedrock:ListFoundationModels",
+                "bedrock:GetInferenceProfile",
+                "bedrock:ListInferenceProfiles"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "BedrockMantleInference",
+            "Effect": "Allow",
+            "Action": [
+                "bedrock-mantle:Get*",
+                "bedrock-mantle:List*",
+                "bedrock-mantle:CreateInference"
+            ],
+            "Resource": "arn:aws:bedrock-mantle:*:*:project/*"
+        },
+        {
+            "Sid": "BedrockMantleCallWithBearerToken",
+            "Effect": "Allow",
+            "Action": [
+                "bedrock-mantle:CallWithBearerToken"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "MarketplaceOperationsFromBedrockMantleFor3pModels",
+            "Effect": "Allow",
+            "Action": [
+                "aws-marketplace:Subscribe",
+                "aws-marketplace:ViewSubscriptions"
+            ],
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "aws:CalledViaLast": "bedrock-mantle.amazonaws.com"
+                }
+            }
+        }
+    ]
+}
