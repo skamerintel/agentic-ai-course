@@ -12,6 +12,7 @@ PROJECTS = {
     "p01": ROOT / "course/projects/p01-model-api-behavior-lab",
     "p02": ROOT / "course/projects/p02-typed-intake-normalizer",
     "p03": ROOT / "course/projects/p03-operations-tool-agent",
+    "p04": ROOT / "course/projects/p04-eval-driven-issue-triage",
 }
 
 

@@ -1,0 +1,6 @@
+{"issue_id":"D001","expected_ids":["K001"],"repo":"acme/payments-service"}
+{"issue_id":"D002","expected_ids":["K002"],"repo":"acme/identity-service"}
+{"issue_id":"D007","expected_ids":["K007"],"repo":"acme/integrations-service"}
+{"issue_id":"D008","expected_ids":["K008"],"repo":"acme/payments-service"}
+{"issue_id":"D009","expected_ids":["K009"],"repo":"acme/identity-service"}
+{"issue_id":"D010","expected_ids":["K010"],"repo":"acme/devportal"}

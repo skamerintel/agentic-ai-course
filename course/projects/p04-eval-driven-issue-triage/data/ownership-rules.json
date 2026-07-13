@@ -1,0 +1,12 @@
+{
+  "version":"1.0",
+  "rules":[
+    {"repo":"acme/payments-service","component":"*","team":"payments"},
+    {"repo":"acme/identity-service","component":"*","team":"identity"},
+    {"repo":"acme/devportal","component":"docs","team":"docs"},
+    {"repo":"acme/devportal","component":"*","team":"developer_experience"},
+    {"repo":"acme/build-platform","component":"security","team":"security"},
+    {"repo":"acme/build-platform","component":"*","team":"platform"},
+    {"repo":"acme/integrations-service","component":"*","team":"platform"}
+  ]
+}

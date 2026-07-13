@@ -54,6 +54,17 @@ class CourseControlTests(unittest.TestCase):
             self.assertTrue((destination / "reports/tool-catalog.md").is_file())
             self.assertTrue((destination / "broken-agent-loop-review.md").is_file())
 
+    def test_start_project_four_excludes_mentor_holdout(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            destination = Path(temporary) / "p04"
+
+            coursectl.start_project("p04", destination)
+
+            self.assertTrue((destination / "data/issues-dev.jsonl").is_file())
+            self.assertTrue((destination / "data/known-issues.jsonl").is_file())
+            self.assertTrue((destination / "reports/labeling-policy.md").is_file())
+            self.assertFalse((destination / "data/holdout-issues.jsonl").exists())
+
 
 if __name__ == "__main__":
     unittest.main()
