@@ -102,6 +102,10 @@ model selection. Prefer capability checks and documented API behavior.
 
 - [Streaming API responses](https://developers.openai.com/api/docs/guides/streaming-responses)
 
+### REF-OPENAI-ERRORS
+
+- [OpenAI API error codes](https://developers.openai.com/api/docs/guides/error-codes)
+
 ### REF-OPENAI-EVALS
 
 - [Working with evals](https://developers.openai.com/api/docs/guides/evals)

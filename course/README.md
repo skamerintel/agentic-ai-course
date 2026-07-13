@@ -11,7 +11,10 @@ The implemented course is organized into modules and cumulative projects.
 - [M04: Operational mental model for LLM applications](modules/m04/README.md)
 - [M05: OpenAI Responses API and Chat Completions](modules/m05/README.md)
 - [M06: Anthropic Messages API comparison](modules/m06/README.md)
+- [M07: Structured outputs and Pydantic validation](modules/m07/README.md)
+- [M08: Streaming, resilience, and model-call boundaries](modules/m08/README.md)
 - [Project 1: Model API Behavior Lab](projects/p01-model-api-behavior-lab/README.md)
+- [Project 2: Typed Intake Normalizer](projects/p02-typed-intake-normalizer/README.md)
 
 Start at M00 and do not advance past a comprehension gate until its required
 artifacts have been reviewed.

@@ -10,6 +10,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parent
 PROJECTS = {
     "p01": ROOT / "course/projects/p01-model-api-behavior-lab",
+    "p02": ROOT / "course/projects/p02-typed-intake-normalizer",
 }
 
 
@@ -44,28 +45,26 @@ def start_project(project: str, destination: Path) -> None:
     destination.mkdir(parents=True, exist_ok=True)
 
     _copy_tree(source / "starter", destination)
-    _copy_tree(source / "data", destination / "data")
-    _copy_tree(source / "fixtures", destination / "fixtures")
-    _copy_tree(source / "rubrics", destination / "rubrics")
-    _copy_tree(source / "templates", destination / "templates")
+    for directory in ("data", "fixtures", "rubrics", "templates"):
+        shared = source / directory
+        if shared.exists():
+            _copy_tree(shared, destination / directory)
     shutil.copy2(source / "README.md", destination / "PROJECT.md")
-    shutil.copy2(
-        source / "flawed-comparison-report.md",
-        destination / "flawed-comparison-report.md",
-    )
+    for document in source.glob("*.md"):
+        if document.name != "README.md":
+            shutil.copy2(document, destination / document.name)
 
     reports = destination / "reports"
     reports.mkdir(exist_ok=True)
-    shutil.copy2(
-        source / "templates/experiment-contract.md",
-        reports / "experiment-contract.md",
-    )
-    shutil.copy2(source / "templates/ai-work-log.md", reports / "ai-work-log.md")
+    templates = source / "templates"
+    if templates.exists():
+        for template in templates.glob("*.md"):
+            shutil.copy2(template, reports / template.name)
 
 
 def materialize_solution(project: str, destination: Path) -> None:
     start_project(project, destination)
-    reference = ROOT / "course/instructor/reference/p01-model-api-behavior-lab"
+    reference = ROOT / "course/instructor/reference" / PROJECTS[project].name
     _copy_tree(reference, destination)
 
 

@@ -17,12 +17,18 @@ Course-wide behavior, including reference-solution access, is configured in
 
 ## Implemented materials
 
-- [M00-M06 and Project 1](course/README.md)
+- [M00-M08, Project 1, and Project 2](course/README.md)
 
 Create the Project 1 learner workspace:
 
 ```bash
 python coursectl.py start p01 work/p01
+```
+
+Create the Project 2 learner workspace:
+
+```bash
+python coursectl.py start p02 work/p02
 ```
 
 Inspect configured reference-solution access:
