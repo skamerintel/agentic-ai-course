@@ -1,0 +1,40 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "durable-release-readiness-workflow"
+version = "0.1.0"
+description = "A durable human-approved LangGraph release workflow"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+  "langgraph",
+  "langgraph-checkpoint-sqlite",
+  "openai",
+  "pydantic",
+]
+
+[project.scripts]
+release-workflow = "release_workflow.cli:main"
+
+[dependency-groups]
+dev = ["pyright", "pytest", "ruff"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/release_workflow"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.pyright]
+include = ["src"]
+typeCheckingMode = "basic"

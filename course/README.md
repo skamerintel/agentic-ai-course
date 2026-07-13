@@ -22,11 +22,14 @@ The implemented course is organized into modules and cumulative projects.
 - [M15: PostgreSQL and SQLAlchemy state](modules/m15/README.md)
 - [M16: Redis, asynchronous jobs, and progress](modules/m16/README.md)
 - [M17: Integration testing and operational diagnosis](modules/m17/README.md)
+- [M18: LangGraph state and explicit workflows](modules/m18/README.md)
+- [M19: Persistence, interrupts, recovery, and approval](modules/m19/README.md)
 - [Project 1: Model API Behavior Lab](projects/p01-model-api-behavior-lab/README.md)
 - [Project 2: Typed Intake Normalizer](projects/p02-typed-intake-normalizer/README.md)
 - [Project 3: Operations Tool Agent](projects/p03-operations-tool-agent/README.md)
 - [Project 4: Eval-Driven Issue Triage](projects/p04-eval-driven-issue-triage/README.md)
 - [Project 5: Asynchronous Agent Job Service](projects/p05-asynchronous-agent-job-service/README.md)
+- [Project 6: Durable Release Readiness Workflow](projects/p06-durable-release-readiness-workflow/README.md)
 
 Start at M00 and do not advance past a comprehension gate until its required
 artifacts have been reviewed.
