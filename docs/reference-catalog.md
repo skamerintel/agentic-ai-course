@@ -5,6 +5,8 @@ Checked on: **2026-07-12**
 OpenAI Responses, structured-output, and evaluation references used by the
 capstone slice were rechecked on **2026-07-13**.
 
+GitHub Actions and uv CI references were checked on **2026-07-14**.
+
 This catalog contains the primary references used by the curriculum roadmap.
 Modules cite reference IDs from this page. Before writing or teaching a module,
 verify its references again and record the new check date in the completed
@@ -35,6 +37,17 @@ model selection. Prefer capability checks and documented API behavior.
 - [Staging and committing changes](https://code.visualstudio.com/docs/sourcecontrol/staging-commits)
 - [Working with GitHub in VS Code](https://code.visualstudio.com/docs/sourcecontrol/github)
 - [Resolve merge conflicts in VS Code](https://code.visualstudio.com/docs/sourcecontrol/merge-conflicts)
+
+### REF-GITHUB-ACTIONS
+
+- [GitHub Actions workflow syntax](https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax)
+- [GitHub Actions secure-use reference](https://docs.github.com/en/actions/reference/security/secure-use)
+- [GitHub Actions matrix jobs](https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/run-job-variations)
+
+### REF-UV-GITHUB-ACTIONS
+
+- [Using uv in GitHub Actions](https://docs.astral.sh/uv/guides/integration/github/)
+- [Official setup-uv action](https://github.com/astral-sh/setup-uv)
 
 ## Python project engineering
 

@@ -11,6 +11,7 @@ engineering roles.
 - [Project sequence](docs/project-sequence.md)
 - [Official reference catalog](docs/reference-catalog.md)
 - [Implementation status](docs/implementation-status.md)
+- [Continuous integration](docs/continuous-integration.md)
 
 Course-wide behavior, including reference-solution access, is configured in
 [`course.toml`](course.toml).

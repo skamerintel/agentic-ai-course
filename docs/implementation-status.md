@@ -1,6 +1,6 @@
 # Implementation Status
 
-Updated: **2026-07-13**
+Updated: **2026-07-14**
 
 ## Complete
 
@@ -80,6 +80,13 @@ Updated: **2026-07-13**
   commands, distinguish intentional TODO failures from environment failures,
   identify the first learning task, and retain path-only output through
   `--quiet`.
+- Read-only GitHub Actions CI with frozen root tools, asset and link validation,
+  M02/M03 reference checks, and a bounded P01-P08 offline reference matrix.
+- Local CI-equivalent helpers for repository validation and isolated reference
+  materialization, plus weekly Dependabot updates for SHA-pinned workflow
+  actions.
+- The live Bedrock prompt-cache experiment is isolated under `scratch/` behind
+  a `__main__` guard so test discovery cannot execute a paid request.
 
 ## Verification completed
 
@@ -146,6 +153,13 @@ Updated: **2026-07-13**
   checkout, and its console entry point validates the exemplar successfully.
 - Project 8 learner starter passes three strict model/fixture tests and fails
   only at seven intended proposal and artifact validator TODO gates.
+- The frozen repository-quality path passes 23 repository tests, Ruff,
+  formatting, 56 JSON/JSONL assets, 13 TOML files, four YAML files, 146 Markdown
+  files, and all required module/project paths.
+- CI-equivalent M02 and M03 reference checks pass 16 package/acceptance tests and
+  three asynchronous-client tests, plus their lint and type checks.
+- The P01-P08 reference matrix passes every project test, Pyright check, package
+  build, and the 20 combined executable private holdout tests for P05-P08.
 
 ## Deliberately not verified
 
@@ -162,6 +176,8 @@ Updated: **2026-07-13**
 - The learner-selected capstone product, live APIs, PostgreSQL/Redis stack,
   Docker smoke test, evaluation iterations, portfolio, and human defense cannot
   be completed by the course-authoring repository.
+- The hosted GitHub Actions run cannot be observed until this branch is pushed;
+  the same workflow commands have been completed locally.
 
 ## Course-authoring status
 
