@@ -87,6 +87,13 @@ Updated: **2026-07-14**
   actions.
 - The live Bedrock prompt-cache experiment is isolated under `scratch/` behind
   a `__main__` guard so test discovery cannot execute a paid request.
+- Instructor handbook covering mentor cadence, gate decisions, AI-review
+  resolution, holdout integrity, reference unlocking, technical defenses,
+  troubleshooting, records, and course completion.
+- Instructor-only templates for sessions, gate decisions, AI reviews, holdout
+  runs, technical defenses, pilot observations, and release records.
+- Clean-clone release and pilot checklist covering learner startup, solution
+  gating, all reference checks, hosted CI, documentation, and release decisions.
 
 ## Verification completed
 
@@ -154,8 +161,8 @@ Updated: **2026-07-14**
 - Project 8 learner starter passes three strict model/fixture tests and fails
   only at seven intended proposal and artifact validator TODO gates.
 - The frozen repository-quality path passes 23 repository tests, Ruff,
-  formatting, 56 JSON/JSONL assets, 13 TOML files, four YAML files, 146 Markdown
-  files, and all required module/project paths.
+  formatting, 56 JSON/JSONL assets, 13 TOML files, four YAML files, 156 Markdown
+  files, and 42 required course paths.
 - CI-equivalent M02 and M03 reference checks pass 16 package/acceptance tests and
   three asynchronous-client tests, plus their lint and type checks.
 - The P01-P08 reference matrix passes every project test, Pyright check, package
@@ -181,6 +188,7 @@ Updated: **2026-07-14**
 
 ## Course-authoring status
 
-- All planned course modules and project scaffolds are implemented.
-- The next work is learner execution of Project 8, mentor gate reviews, and
-  maintenance as upstream APIs and frameworks evolve.
+- All planned course modules, projects, CI, startup tooling, and instructor
+  operating materials are implemented.
+- The next phase is a clean-clone pilot learner run, followed by fixes based on
+  observed friction and ongoing maintenance as upstream APIs evolve.

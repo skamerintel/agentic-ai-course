@@ -86,3 +86,7 @@ Workflow actions are pinned to immutable commit SHAs. Dependabot checks them
 weekly. The action comments record the corresponding release tags. The uv
 version is pinned in the workflow and should be updated deliberately with a
 successful full reference matrix.
+
+Before assigning a new revision to a learner, complete the
+[course release checklist](release-checklist.md); CI does not perform human gate,
+clean-clone usability, or pilot-learner decisions.

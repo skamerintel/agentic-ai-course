@@ -177,6 +177,9 @@ def validate_required_layout(root: Path = ROOT) -> tuple[list[str], int]:
         root / "coursectl.py",
         root / "course.toml",
         root / ".github/workflows/course-ci.yml",
+        root / "docs/instructor-handbook.md",
+        root / "docs/release-checklist.md",
+        root / "course/instructor/README.md",
         *(root / f"course/modules/m{number:02}/README.md" for number in range(28)),
         *(root / f"course/projects/p{number:02}-" for number in range(1, 9)),
     ]

@@ -153,6 +153,8 @@ class CourseControlTests(unittest.TestCase):
             self.assertTrue((destination / "reports/project-brief.md").is_file())
             self.assertTrue((destination / "candidate-briefs.md").is_file())
             self.assertFalse((destination / "mentor-challenges.jsonl").exists())
+            self.assertFalse((destination / "gate-decision.md").exists())
+            self.assertFalse((destination / "instructor").exists())
             start_here = (destination / "START_HERE.md").read_text()
             self.assertIn("Three strict model/fixture tests", start_here)
             self.assertIn("complete the M25 proposal artifacts", start_here)
