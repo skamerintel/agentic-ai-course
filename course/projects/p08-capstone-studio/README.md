@@ -56,6 +56,9 @@ uv sync
 uv run pytest
 ```
 
+The `start` command prints these next steps and creates `START_HERE.md` with the
+expected baseline and first proposal task.
+
 The starter tests that exercise proposal and artifact validation fail until the
 two validator functions are implemented. The studio package is development
 tooling; your selected capstone product should live in its own repository or a

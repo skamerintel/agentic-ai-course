@@ -76,6 +76,10 @@ Updated: **2026-07-13**
 - Project 8 reference cross-field validator and support-escalation exemplar that
   preserve independent capstone implementation rather than supplying a solved
   product.
+- Project-specific startup helpers that generate `START_HERE.md`, print setup
+  commands, distinguish intentional TODO failures from environment failures,
+  identify the first learning task, and retain path-only output through
+  `--quiet`.
 
 ## Verification completed
 
