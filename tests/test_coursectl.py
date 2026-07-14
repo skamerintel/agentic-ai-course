@@ -10,6 +10,24 @@ import coursectl
 
 
 class CourseControlTests(unittest.TestCase):
+    def test_copy_tree_excludes_generated_python_caches(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            source = root / "source"
+            destination = root / "destination"
+            (source / "__pycache__").mkdir(parents=True)
+            (source / ".ruff_cache").mkdir()
+            (source / "package").mkdir()
+            (source / "__pycache__/module.pyc").write_bytes(b"cache")
+            (source / ".ruff_cache/entry").write_text("cache")
+            (source / "package/module.py").write_text("VALUE = 1\n")
+
+            coursectl._copy_tree(source, destination)
+
+            self.assertTrue((destination / "package/module.py").is_file())
+            self.assertFalse((destination / "__pycache__").exists())
+            self.assertFalse((destination / ".ruff_cache").exists())
+
     def test_startup_guides_cover_projects_and_reference_copied_files(self) -> None:
         self.assertEqual(set(coursectl.PROJECTS), set(coursectl.PROJECT_GUIDES))
         with tempfile.TemporaryDirectory() as temporary:

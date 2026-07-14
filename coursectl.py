@@ -173,7 +173,17 @@ def solution_allowed(
 
 
 def _copy_tree(source: Path, destination: Path) -> None:
-    shutil.copytree(source, destination, dirs_exist_ok=True)
+    shutil.copytree(
+        source,
+        destination,
+        dirs_exist_ok=True,
+        ignore=shutil.ignore_patterns(
+            "__pycache__",
+            ".pytest_cache",
+            ".ruff_cache",
+            "*.pyc",
+        ),
+    )
 
 
 def render_start_here(project: str, reference: bool = False) -> str:
@@ -257,6 +267,11 @@ def render_start_summary(
     expectation = (
         "Reference tests should pass." if reference else guide.learner_test_expectation
     )
+    first_task = (
+        "Read START_HERE.md after completing a documented attempt."
+        if reference
+        else guide.first_task
+    )
     return "\n".join(
         (
             f"Created {project} {kind} workspace: {destination}",
@@ -267,7 +282,7 @@ def render_start_summary(
             "  uv run pytest",
             "",
             f"Expected first test run: {expectation}",
-            f"First task: {guide.first_task if not reference else 'Read START_HERE.md after completing a documented attempt.'}",
+            f"First task: {first_task}",
             "Read START_HERE.md for the workspace map and gate guidance.",
         )
     )

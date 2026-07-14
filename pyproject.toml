@@ -7,3 +7,21 @@ requires-python = ">=3.13"
 dependencies = [
     "pydantic-ai-slim[bedrock]>=2.9.0",
 ]
+
+[dependency-groups]
+dev = [
+    "pyyaml>=6.0.3,<7",
+    "ruff>=0.15.21,<0.16",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+extend-exclude = [
+    "course/instructor/evaluation",
+    "course/instructor/reference",
+    "work",
+]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]

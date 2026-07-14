@@ -1,0 +1,82 @@
+name: Course CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: course-ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  UV_NO_PROGRESS: "1"
+
+jobs:
+  quality:
+    name: Repository quality
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
+
+      - name: Install uv and Python
+        uses: astral-sh/setup-uv@11f9893b081a58869d3b5fccaea48c9e9e46f990 # v8.3.2
+        with:
+          version: "0.11.28"
+          python-version: "3.13"
+          enable-cache: true
+          cache-dependency-glob: uv.lock
+
+      - name: Install repository validation tools
+        run: uv sync --only-group dev --frozen
+
+      - name: Lint Python
+        run: uv run --no-sync ruff check .
+
+      - name: Check Python formatting
+        run: uv run --no-sync ruff format --check .
+
+      - name: Run repository unit tests
+        run: uv run --no-sync python -m unittest discover -s tests -p "test_*.py"
+
+      - name: Validate assets, links, and course layout
+        run: uv run --no-sync python scripts/validate_course.py
+
+      - name: Verify module lab references
+        run: uv run --no-sync python scripts/verify_module_references.py
+
+  reference:
+    name: Reference ${{ matrix.project }}
+    needs: quality
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        project: [p01, p02, p03, p04, p05, p06, p07, p08]
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
+
+      - name: Install uv and Python
+        uses: astral-sh/setup-uv@11f9893b081a58869d3b5fccaea48c9e9e46f990 # v8.3.2
+        with:
+          version: "0.11.28"
+          python-version: "3.13"
+          enable-cache: true
+          cache-dependency-glob: course/projects/**/starter/pyproject.toml
+
+      - name: Materialize and verify offline reference
+        run: >-
+          uv run --no-project --python 3.13 python
+          scripts/verify_reference.py ${{ matrix.project }}
