@@ -12,6 +12,8 @@ engineering roles.
 - [Official reference catalog](docs/reference-catalog.md)
 - [Implementation status](docs/implementation-status.md)
 - [Continuous integration](docs/continuous-integration.md)
+- [Instructor handbook](docs/instructor-handbook.md)
+- [Course release checklist](docs/release-checklist.md)
 
 Course-wide behavior, including reference-solution access, is configured in
 [`course.toml`](course.toml).

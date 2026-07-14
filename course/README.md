@@ -51,3 +51,7 @@ files.
 
 Reference-solution access is controlled by the root `course.toml` file and the
 `coursectl.py` helper documented in the repository README.
+
+Mentors should use the [instructor materials](instructor/README.md) for gate
+operation, private holdouts, reference access, technical defenses, and release
+checks.
