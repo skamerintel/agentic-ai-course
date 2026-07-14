@@ -67,6 +67,18 @@ Create the Project 8 capstone studio workspace:
 python coursectl.py start p08 work/p08
 ```
 
+Every `start` command prints the exact setup commands, expected initial test
+state, and first project task. It also creates `START_HERE.md` in the learner
+workspace with the same durable guidance and a workspace map. Initial TODO test
+failures are part of the learning path; dependency, import, or test-collection
+failures are not.
+
+For automation that expects path-only output:
+
+```bash
+python coursectl.py start p08 work/p08 --quiet
+```
+
 Inspect configured reference-solution access:
 
 ```bash

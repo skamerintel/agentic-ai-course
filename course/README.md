@@ -44,5 +44,10 @@ The implemented course is organized into modules and cumulative projects.
 Start at M00 and do not advance past a comprehension gate until its required
 artifacts have been reviewed.
 
+When starting a project, read the generated `START_HERE.md` before changing
+code. It identifies the intended initial test failures, setup failures that are
+not part of the exercise, the first required task, and the important workspace
+files.
+
 Reference-solution access is controlled by the root `course.toml` file and the
 `coursectl.py` helper documented in the repository README.
