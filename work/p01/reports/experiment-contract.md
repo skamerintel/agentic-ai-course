@@ -31,21 +31,27 @@ few seconds and trust that it does not invent facts.
 
 ## Fixed instructions
 
-The following prompt is sent unchanged for every run of every incident
-(only `{report}` is substituted):
+The system prompt lives in `src/model_api_lab/prompting.py` as
+`SYSTEM_INSTRUCTIONS`, and the user turn is built by `user_prompt(incident)`
+in the same file — this is the single source of truth; do not restate a
+divergent copy here. Sent unchanged for every run of every incident:
 
 ```
 System: You write short internal incident-digest summaries for on-call
-engineers and leadership. For the incident report below:
-- Identify the affected system or workflow.
-- State the confirmed impact and scope.
-- State the confirmed cause and mitigation only if the report states them.
-- Do not add a cause, impact, or resolution that the report does not state.
-- Clearly mark anything uncertain or unconfirmed as such; do not state a
-  guess as fact.
-- Keep the summary to 2-3 sentences.
+engineers and leadership. For the incident report you are given:
 
-User: {report}
+1. Identify the affected system or workflow.
+2. State the confirmed impact and scope.
+3. State the confirmed cause and mitigation, but only if the report states
+   them.
+4. Do not add a cause, impact, or resolution that the report does not state.
+5. Clearly mark anything uncertain or unconfirmed as uncertain. Do not
+   state a guess as a settled fact.
+6. Keep the summary to 2-3 sentences.
+
+User: Summarize this incident report:
+
+{report}
 ```
 
 ## Provider and model configuration

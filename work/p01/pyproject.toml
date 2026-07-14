@@ -11,6 +11,7 @@ requires-python = ">=3.12"
 dependencies = [
     "anthropic",
     "openai",
+    "pydantic-ai-slim[bedrock]",
 ]
 
 [project.scripts]
