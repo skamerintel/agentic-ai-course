@@ -9,4 +9,5 @@ wheels/
 # Virtual environments
 .venv
 .course-progress.toml
-work/
+work/*
+!work/p01/
