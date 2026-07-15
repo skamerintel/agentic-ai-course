@@ -71,3 +71,28 @@ decision.
   pass across all 24 runs); whether the run-to-run variance seen in 4 of 8
   incidents at `temperature=0` is genuine model non-determinism or partly a
   scoring-boundary artifact is undetermined.
+
+## 2026-07-15 — Write corrected-flawed-report.md
+
+- **Coding agent:** Claude Code (Sonnet 5).
+- **Requirement:** `flawed-comparison-report.md`'s 5-point learner task —
+  classify unsupported/misleading claims, identify confounding variables,
+  describe missing measurements, state which observations remain usable,
+  propose a defensible experiment and narrower conclusion.
+- **Generated change:** `reports/corrected-flawed-report.md`, classifying
+  each claim in the flawed report (overgeneralization, non sequitur,
+  payload-shape/quality conflation, defect-reframed-as-virtue, false
+  determinism claim, self-graded-evaluation circularity), listing
+  confounders (unequal prompts, n=1, no repetition, self-grading), missing
+  measurements (latency, tokens, fact recall, forbidden claims, variance),
+  and a narrower conclusion grounded in this project's own 24-run data
+  (from the same-day repetition experiment) rather than invented numbers.
+- **Evidence reviewed:** the flawed report's text directly; cross-checked
+  its false determinism claim against this project's own measured
+  variance (4/8 incidents varied at temp=0) rather than accepting either
+  claim at face value.
+- **Accepted:** as drafted, no corrections requested.
+- **Checks run:** `pytest`, `ruff check .`, `ruff format --check .` (report
+  is markdown-only; checks confirm no regression elsewhere).
+- **Remaining uncertainty:** none specific to this document — it's an
+  analysis task, not a code change.
