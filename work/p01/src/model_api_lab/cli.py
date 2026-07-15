@@ -9,11 +9,7 @@ from model_api_lab.data import load_incidents
 from model_api_lab.evaluate import score_summary
 from model_api_lab.experiment import run_offline, summarize, write_jsonl
 from model_api_lab.models import ExperimentRecord
-from model_api_lab.providers import (
-    call_anthropic_messages,
-    call_openai_chat,
-    call_openai_responses,
-)
+from model_api_lab.providers import call_anthropic_messages
 
 
 def _parser() -> argparse.ArgumentParser:
@@ -26,7 +22,7 @@ def _parser() -> argparse.ArgumentParser:
     offline.add_argument("--output", default="reports/offline-results.jsonl")
 
     live = subparsers.add_parser("live", help="run one live provider call")
-    live.add_argument("provider", choices=("responses", "chat", "anthropic"))
+    live.add_argument("provider", choices=("anthropic",))
     live.add_argument("incident_id")
     live.add_argument("--data", default="data/incidents.jsonl")
     live.add_argument("--output", default="reports/live-result.json")
@@ -38,15 +34,8 @@ def _live(args: argparse.Namespace) -> int:
     incidents = {item.id: item for item in load_incidents(args.data)}
     incident = incidents[args.incident_id]
 
-    if args.provider == "responses":
-        model = os.environ["OPENAI_MODEL"]
-        result = call_openai_responses(incident, model, args.timeout)
-    elif args.provider == "chat":
-        model = os.environ["OPENAI_MODEL"]
-        result = call_openai_chat(incident, model, args.timeout)
-    else:
-        model = os.environ["ANTHROPIC_MODEL"]
-        result = call_anthropic_messages(incident, model, args.timeout)
+    model = os.environ["ANTHROPIC_MODEL"]
+    result = call_anthropic_messages(incident, model, args.timeout)
 
     record = ExperimentRecord(
         incident_id=incident.id,

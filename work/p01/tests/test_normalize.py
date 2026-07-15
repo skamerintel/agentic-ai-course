@@ -3,41 +3,12 @@ from pathlib import Path
 
 import pytest
 
-from model_api_lab.normalize import (
-    normalize_anthropic_messages,
-    normalize_openai_chat,
-    normalize_openai_responses,
-)
+from model_api_lab.normalize import normalize_anthropic_messages
 
 
 def load_fixture(name: str, incident_id: str) -> dict:
     payloads = json.loads(Path("fixtures", name).read_text(encoding="utf-8"))
     return payloads[incident_id]
-
-
-def test_responses_skips_non_message_items_and_preserves_usage() -> None:
-    result = normalize_openai_responses(
-        load_fixture("openai_responses.json", "INC-001"), 12.5
-    )
-
-    assert result.provider == "openai"
-    assert result.api == "responses"
-    assert result.response_id == "resp_fixture_001"
-    assert result.input_tokens == 126
-    assert result.output_tokens == 52
-    assert result.output_types == ("reasoning", "message")
-    assert "Redis memory exhaustion" in result.text
-    assert result.latency_ms == 12.5
-
-
-def test_chat_extracts_message_content() -> None:
-    result = normalize_openai_chat(load_fixture("openai_chat.json", "INC-002"))
-
-    assert result.provider == "openai"
-    assert result.api == "chat_completions"
-    assert result.response_id == "chatcmpl_fixture_002"
-    assert result.input_tokens == 114
-    assert "06:18 CT" in result.text
 
 
 def test_anthropic_joins_all_text_blocks() -> None:
@@ -55,11 +26,6 @@ def test_anthropic_joins_all_text_blocks() -> None:
 @pytest.mark.parametrize(
     ("normalizer", "payload"),
     [
-        (normalize_openai_responses, {"id": "x", "model": "m", "output": []}),
-        (
-            normalize_openai_chat,
-            {"id": "x", "model": "m", "choices": []},
-        ),
         (
             normalize_anthropic_messages,
             {"id": "x", "model": "m", "content": []},

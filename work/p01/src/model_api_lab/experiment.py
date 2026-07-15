@@ -8,17 +8,11 @@ from typing import Any
 from model_api_lab.data import load_incidents
 from model_api_lab.evaluate import aggregate, score_summary
 from model_api_lab.models import ExperimentRecord, ProviderResult
-from model_api_lab.normalize import (
-    normalize_anthropic_messages,
-    normalize_openai_chat,
-    normalize_openai_responses,
-)
+from model_api_lab.normalize import normalize_anthropic_messages
 
 Normalizer = Callable[[dict[str, Any], float], ProviderResult]
 
 OFFLINE_PROVIDERS: tuple[tuple[str, Normalizer], ...] = (
-    ("openai_responses.json", normalize_openai_responses),
-    ("openai_chat.json", normalize_openai_chat),
     ("anthropic_messages.json", normalize_anthropic_messages),
 )
 
