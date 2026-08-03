@@ -1,4 +1,0 @@
-{
-  "get_service_status:payments": ["retryable"],
-  "get_asset:LAP-500": ["terminal"]
-}
