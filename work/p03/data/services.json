@@ -1,0 +1,5 @@
+[
+  {"name":"checkout","status":"operational","updated_at":"2026-07-12T15:10:00Z","region":"global","detail":"Error rate below 0.2%."},
+  {"name":"payments","status":"degraded","updated_at":"2026-07-12T15:08:00Z","region":"us-east","detail":"Settlement processing is delayed by approximately 12 minutes."},
+  {"name":"support-queue","status":"operational","updated_at":"2026-07-12T15:05:00Z","region":"global","detail":"Queue ingestion and assignment are healthy."}
+]

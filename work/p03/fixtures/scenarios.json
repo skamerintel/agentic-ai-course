@@ -1,0 +1,92 @@
+[
+  {
+    "id":"S01",
+    "user_request":"Is checkout currently healthy? Include the most recent related incident.",
+    "steps":[
+      {"tool_calls":[{"call_id":"s01-status","name":"get_service_status","arguments":{"service_name":"checkout"}}]},
+      {"tool_calls":[{"call_id":"s01-incidents","name":"search_incidents","arguments":{"service_name":"checkout","limit":1}}]},
+      {"final_text":"Checkout is currently operational. The most recent related incident was INC-101, a resolved 503-error event caused by cache memory exhaustion."}
+    ],
+    "expected":{"stop_reason":"completed","tool_names":["get_service_status","search_incidents"]}
+  },
+  {
+    "id":"S02",
+    "user_request":"Where is laptop LAP-204, who owns it, and what is its status?",
+    "steps":[
+      {"tool_calls":[{"call_id":"s02-asset","name":"get_asset","arguments":{"asset_id":"LAP-204"}}]},
+      {"final_text":"LAP-204 is assigned to Maya Chen in Chicago and is currently marked assigned."}
+    ],
+    "expected":{"stop_reason":"completed","tool_names":["get_asset"]}
+  },
+  {
+    "id":"S03",
+    "user_request":"What is the current status of the lunar service?",
+    "steps":[
+      {"tool_calls":[{"call_id":"s03-status","name":"get_service_status","arguments":{"service_name":"lunar"}}]},
+      {"final_text":"I do not have sufficient evidence to report a lunar service status because the service was not found."}
+    ],
+    "expected":{"stop_reason":"completed","tool_names":["get_service_status"]}
+  },
+  {
+    "id":"S04",
+    "user_request":"Is payments healthy right now?",
+    "steps":[
+      {"tool_calls":[{"call_id":"s04-status-1","name":"get_service_status","arguments":{"service_name":"payments"}}]},
+      {"tool_calls":[{"call_id":"s04-status-2","name":"get_service_status","arguments":{"service_name":"payments"}}]},
+      {"final_text":"Payments is degraded in us-east, with settlement processing delayed by about 12 minutes."}
+    ],
+    "expected":{"stop_reason":"completed","tool_names":["get_service_status","get_service_status"]}
+  },
+  {
+    "id":"S05",
+    "user_request":"Who owns LAP-500?",
+    "steps":[
+      {"tool_calls":[{"call_id":"s05-asset","name":"get_asset","arguments":{"asset_id":"LAP-500"}}]},
+      {"final_text":"I cannot verify the owner of LAP-500 because the asset source returned a terminal error."}
+    ],
+    "expected":{"stop_reason":"completed","tool_names":["get_asset"]}
+  },
+  {
+    "id":"S06",
+    "user_request":"Where is scanner SCN-B14?",
+    "steps":[
+      {"tool_calls":[{"call_id":"s06-invalid","name":"get_asset","arguments":{"asset":"SCN-B14"}}]},
+      {"tool_calls":[{"call_id":"s06-corrected","name":"get_asset","arguments":{"asset_id":"SCN-B14"}}]},
+      {"final_text":"SCN-B14 is in Building B, belongs to Warehouse 2 Operations, and requires maintenance."}
+    ],
+    "expected":{"stop_reason":"completed","tool_names":["get_asset","get_asset"]}
+  },
+  {
+    "id":"S07",
+    "user_request":"Keep checking checkout until something changes.",
+    "config":{"max_repeated_calls_per_signature":2},
+    "steps":[
+      {"tool_calls":[{"call_id":"s07-1","name":"get_service_status","arguments":{"service_name":"checkout"}}]},
+      {"tool_calls":[{"call_id":"s07-2","name":"get_service_status","arguments":{"service_name":"checkout"}}]},
+      {"tool_calls":[{"call_id":"s07-3","name":"get_service_status","arguments":{"service_name":"checkout"}}]},
+      {"final_text":"Checkout remains operational."}
+    ],
+    "expected":{"stop_reason":"repeated_call_limit","tool_names":["get_service_status","get_service_status"]}
+  },
+  {
+    "id":"S08",
+    "user_request":"Investigate checkout repeatedly without concluding.",
+    "config":{"max_iterations":3},
+    "steps":[
+      {"tool_calls":[{"call_id":"s08-1","name":"get_service_status","arguments":{"service_name":"checkout"}}]},
+      {"tool_calls":[{"call_id":"s08-2","name":"search_incidents","arguments":{"service_name":"checkout","limit":1}}]},
+      {"tool_calls":[{"call_id":"s08-3","name":"get_service_status","arguments":{"service_name":"support-queue"}}]},
+      {"tool_calls":[{"call_id":"s08-4","name":"search_incidents","arguments":{"service_name":"support-queue","limit":1}}]}
+    ],
+    "expected":{"stop_reason":"iteration_limit","tool_names":["get_service_status","search_incidents","get_service_status"]}
+  },
+  {
+    "id":"S09",
+    "user_request":"Compare current checkout status with its latest incident in one step.",
+    "steps":[
+      {"tool_calls":[{"call_id":"s09-status","name":"get_service_status","arguments":{"service_name":"checkout"}},{"call_id":"s09-incidents","name":"search_incidents","arguments":{"service_name":"checkout","limit":1}}]},
+      {"final_text":"Checkout is operational now; its latest incident, INC-101, was resolved after elevated 503 errors."}
+    ],
+    "expected":{"stop_reason":"completed","tool_names":["get_service_status","search_incidents"]}
+  }
+]

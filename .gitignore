@@ -11,3 +11,4 @@ wheels/
 .course-progress.toml
 work/*
 !work/p01/
+!work/p03/

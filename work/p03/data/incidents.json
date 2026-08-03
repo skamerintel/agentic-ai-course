@@ -1,0 +1,7 @@
+[
+  {"incident_id":"INC-101","service":"checkout","started_at":"2026-07-10T14:05:00Z","status":"resolved","summary":"Elevated checkout 503 errors after cache memory exhaustion."},
+  {"incident_id":"INC-101","service":"checkout","started_at":"2026-07-10T14:05:00Z","status":"resolved","summary":"Duplicate export of the checkout cache incident."},
+  {"incident_id":"INC-102","service":"checkout","started_at":"2026-05-03T09:20:00Z","status":"resolved","summary":"Intermittent checkout latency during a database failover."},
+  {"incident_id":"INC-201","service":"payments","started_at":"2026-07-12T12:40:00Z","status":"monitoring","summary":"Settlement processing delayed after processor throughput reduction."},
+  {"incident_id":"INC-301","service":"support-queue","started_at":"2026-06-28T17:30:00Z","status":"resolved","summary":"Ticket assignment paused after a queue consumer restart."}
+]
